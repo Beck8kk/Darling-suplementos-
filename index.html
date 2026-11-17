@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DARLIN SUPLEMENTOS | Alta Performance & Hipertrofia</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Google Fonts: Oswald (Impacto/Esportivo) e Inter (Leitura limpa) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+​<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+darkBg: 'var(--bg-main, #0d0d0f)',
+cardBg: 'var(--bg-card, #161619)',
+cardHover: '#1f1f23',
+brandRed: 'var(--brand-primary, #dc2626)',
+brandRedBright: 'var(--brand-bright, #ef4444)',
+brandRedDark: 'var(--brand-dark, #991b1b)'
+},
+fontFamily: {
+display: ['Oswald', 'sans-serif'],
+sans: ['Inter', 'sans-serif'],
+},
+boxShadow: {
+'red-glow': '0 0 20px var(--brand-glow, rgba(220, 38, 38, 0.35))',
+'red-sm': '0 0 10px var(--brand-glow, rgba(220, 38, 38, 0.25))',
+'red-lg': '0 0 35px var(--brand-glow, rgba(220, 38, 38, 0.5))',
+}
+}
+}
+}
+</script>
+​<style>
+:root {
+--bg-main: #0d0d0f;
+--bg-card: #161619;
+--brand-primary: #dc2626;
+--brand-bright: #ef4444;
+--brand-dark: #991b1b;
+--brand-glow: rgba(220, 38, 38, 0.35);
+}
+body {
+background-color: var(--bg-main);
+color: #f5f5f5;
+font-family: 'Inter', sans-serif;
+overflow-x: hidden;
+transition: background-color 0.3s ease;
+}
+h1, h2, h3, .font-sport {
+font-family: 'Oswald', sans-serif;
+letter-spacing: 0.03em;
+}
+::-webkit-scrollbar {
+width: 8px;
+}
+::-webkit-scrollbar-track {
+background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+background: #27272a;
+border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+background: var(--brand-primary);
+}
+.red-text-glow {
+text-shadow: 0 0 18px var(--brand-glow);
+}
+.hero-grid-bg {
+background-image:
+linear-gradient(to right, rgba(220, 38, 38, 0.05) 1px, transparent 1px),
+linear-gradient(to bottom, rgba(220, 38, 38, 0.05) 1px, transparent 1px);
+background-size: 40px 40px;
+}
+@keyframes pulse-brand {
+0%, 100% { box-shadow: 0 0 15px var(--brand-glow); }
+50% { box-shadow: 0 0 28px var(--brand-glow); }
+}
+.animate-red-pulse {
+animation: pulse-brand 2.5s infinite;
+}
+.no-scrollbar::-webkit-scrollbar {
+display: none;
+}
+.no-scrollbar {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+</style>
+</head>
+<body class="antialiased selection:bg-brandRed selection:text-white">
+​<!-- BARRA SUPERIOR DE PROMOÇÃO -->
+<div class="bg-brandRed text-white text-xs sm:text-sm font-bold py-2 px-4 text-center uppercase tracking-wider transition-colors">
+⚡ PRIMEIRA COMPRA? USE O CUPOM <span class="bg-black text-brandRedBright px-2 py-0.5 rounded mx-1 font-mono" id="topBannerCoupon">DARLIN20</span> E GANHE <span id="topBannerDiscount">20</span>% OFF + FRETE RÁPIDO!
+</div>
+​<!-- HEADER FIXO -->
+<header class="sticky top-0 z-40 bg-darkBg/95 backdrop-blur-md border-b border-neutral-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20 gap-4">
+<!-- Logotipo -->
+<a href="#inicio" class="flex items-center gap-2.5 group shrink-0">
+<div class="w-10 h-10 rounded-xl bg-brandRed/15 border border-brandRed flex items-center justify-center group-hover:bg-brandRed text-brandRed group-hover:text-white transition-all shadow-red-sm">
+<i data-lucide="dumbbell" class="w-6 h-6"></i>
+</div>
+<div>
+<span id="storeLogoTitle" class="font-sport text-2xl sm:text-3xl font-bold tracking-tight text-white block leading-none">
+DARLIN <span class="text-brandRed">SUPLEMENTOS</span>
+</span>
+<span class="text-[10px] uppercase tracking-[0.25em] text-neutral-400 font-semibold">High Performance Lab</span>
+</div>
+</a>
+​<!-- Navegação Desktop -->
+<nav class="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-wider">
+<a href="#inicio" class="text-neutral-300 hover:text-brandRed transition-colors">Início</a>
+<a href="#catalogo" class="text-neutral-300 hover:text-brandRed transition-colors">Catálogo</a>
+<a href="#depoimentos" class="text-neutral-300 hover:text-brandRed transition-colors">Resultados</a>
+<button onclick="toggleChat(true)" class="text-brandRedBright flex items-center gap-1.5 hover:underline">
+<i data-lucide="bot" class="w-4 h-4"></i> Consultoria IA FIT
+</button>
+</nav>
+​<!-- Busca, Admin e Carrinho -->
+<div class="flex items-center gap-2.5">
+<div class="relative hidden sm:block">
+<input type="text" id="searchInput" oninput="filterProducts()" placeholder="Buscar suplemento..." 
+class="bg-cardBg border border-neutral-800 focus:border-brandRed rounded-xl pl-9 pr-4 py-2 text-sm text-white placeholder-neutral-500 outline-none w-40 lg:w-56 transition-all">
+<i data-lucide="search" class="w-4 h-4 text-neutral-500 absolute left-3 top-2.5"></i>
+</div>
+​<!-- Botão Painel Admin -->
+<button onclick="openAdminGate()" class="bg-cardBg hover:bg-neutral-800 border border-neutral-800 hover:border-brandRed text-neutral-400 hover:text-white p-3 rounded-xl transition-all flex items-center gap-1.5 group" title="Painel Administrativo">
+<i data-lucide="shield-alert" class="w-5 h-5 text-neutral-400 group-hover:text-brandRed transition-colors"></i>
+<span class="hidden xl:inline text-xs font-semibold uppercase">Admin</span>
+</button>
+​<!-- Botão Carrinho -->
+<button onclick="toggleChat(false); toggleCart(true);" class="relative bg-cardBg hover:bg-neutral-800 border border-neutral-700 hover:border-brandRed text-white p-3 rounded-xl transition-all flex items-center gap-2 group" aria-label="Abrir Carrinho">
+<i data-lucide="shopping-cart" class="w-5 h-5 text-brandRed group-hover:scale-110 transition-transform"></i>
+<span class="hidden lg:inline text-sm font-semibold">Carrinho</span>
+<span id="cartBadge" class="absolute -top-2 -right-2 bg-brandRed text-white text-xs font-extrabold w-6 h-6 rounded-full flex items-center justify-center shadow-red-sm">0</span>
+</button>
+</div>
+</div>
+​<!-- Busca Mobile -->
+<div class="pb-3 sm:hidden">
+<div class="relative">
+<input type="text" id="searchInputMobile" oninput="syncSearch(this.value)" placeholder="O que você procura hoje? (Ex: Whey, Creatina...)" 
+class="w-full bg-cardBg border border-neutral-800 focus:border-brandRed rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-neutral-500 outline-none">
+<i data-lucide="search" class="w-4 h-4 text-neutral-500 absolute left-3.5 top-3"></i>
+</div>
+</div>
+</div>
+</header>
+​<!-- CONTEÚDO PRINCIPAL -->
+<main id="mainView">
+<!-- HERO BANNER -->
+<section id="inicio" class="relative hero-grid-bg border-b border-neutral-900 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-brandRed/10 via-transparent to-darkBg pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24 relative z-10">
+<div class="grid lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+<div class="inline-flex items-center gap-2 bg-brandRed/10 border border-brandRed/40 text-brandRedBright px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider">
+<i data-lucide="flame" class="w-4 h-4"></i> Matéria-Prima Importada & Pureza Hardcore
+</div>
+​<h1 id="heroHeadline" class="text-4xl sm:text-6xl lg:text-7xl font-bold uppercase leading-[1.05] text-white">
+GANHE <span class="text-brandRed red-text-glow">20% OFF</span> NA PRIMEIRA COMPRA
+</h1>
+​<p id="heroSubheadline" class="text-neutral-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+Chega de suplemento subdosado. Alcance o ápice da hipertrofia, força bruta e recuperação muscular com a linha profissional <strong class="text-white" id="heroBrandName">Darlin Suplementos</strong>.
+</p>
+​<!-- Box Cupom Rápido -->
+<div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+<a href="#catalogo" class="w-full sm:w-auto bg-brandRed hover:bg-brandRedBright text-white font-sport text-xl font-bold uppercase px-8 py-4 rounded-xl shadow-red-glow hover:shadow-red-lg transition-all flex items-center justify-center gap-2 active:scale-95">
+VER PRODUTOS <i data-lucide="arrow-down-right" class="w-6 h-6"></i>
+</a>
+​<button onclick="copyCoupon()" class="w-full sm:w-auto bg-cardBg hover:bg-neutral-800 border border-dashed border-brandRed text-white px-6 py-4 rounded-xl flex items-center justify-center gap-3 transition-all active:scale-95">
+<div class="text-left">
+<span class="block text-[10px] text-neutral-400 uppercase font-bold">Clique para copiar cupom</span>
+<span class="font-mono text-brandRedBright font-bold text-lg" id="heroCouponDisplay">DARLIN20</span>
+</div>
+<i data-lucide="copy" class="w-5 h-5 text-brandRed"></i>
+</button>
+</div>
+​<!-- Diferenciais -->
+<div class="grid grid-cols-3 gap-4 pt-6 border-t border-neutral-800/80 max-w-lg mx-auto lg:mx-0">
+<div>
+<p class="font-sport text-2xl text-brandRedBright font-bold">100%</p>
+<p class="text-xs text-neutral-400">Laudo Aprovado</p>
+</div>
+<div>
+<p class="font-sport text-2xl text-brandRedBright font-bold">24H</p>
+<p class="text-xs text-neutral-400">Envio Express</p>
+</div>
+<div>
+<p class="font-sport text-2xl text-brandRedBright font-bold">4.9 ★</p>
+<p class="text-xs text-neutral-400">+10.000 Atletas</p>
+</div>
+</div>
+</div>
+​<!-- Destaque Visual Hero -->
+<div class="lg:col-span-5 flex justify-center">
+<div class="relative w-full max-w-md bg-gradient-to-br from-neutral-900 to-black border border-neutral-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
+<div class="absolute -top-4 -right-4 bg-brandRed text-white font-sport font-bold text-lg px-4 py-1.5 rounded-xl rotate-6 shadow-red-sm">
+TOP VENDAS #1
+</div>
+<div class="flex items-end justify-center py-4 gap-2">
+<svg viewBox="0 0 220 260" class="w-48 sm:w-56 h-auto drop-shadow-[0_15px_25px_rgba(220,38,38,0.25)]">
+<defs>
+<linearGradient id="poteGradRed" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#26262b"/>
+<stop offset="50%" stop-color="#141417"/>
+<stop offset="100%" stop-color="#08080a"/>
+</linearGradient>
+</defs>
+<rect x="35" y="15" width="150" height="28" rx="6" fill="#1f1f23" stroke="var(--brand-primary)" stroke-width="2"/>
+<line x1="50" y1="15" x2="50" y2="43" stroke="#333" stroke-width="3"/>
+<line x1="70" y1="15" x2="70" y2="43" stroke="#333" stroke-width="3"/>
+<line x1="150" y1="15" x2="150" y2="43" stroke="#333" stroke-width="3"/>
+<line x1="170" y1="15" x2="170" y2="43" stroke="#333" stroke-width="3"/>
+<rect x="25" y="45" width="170" height="195" rx="18" fill="url(#poteGradRed)" stroke="#2b2b30" stroke-width="2"/>
+<rect x="27" y="75" width="166" height="130" fill="#0d0d0f"/>
+<polygon points="27,75 193,75 193,92 27,105" fill="var(--brand-primary)"/>
+<text x="110" y="132" text-anchor="middle" fill="#ffffff" font-family="Oswald, sans-serif" font-weight="bold" font-size="22">WHEY PROTEIN</text>
+<text x="110" y="154" text-anchor="middle" fill="var(--brand-bright)" font-family="Oswald, sans-serif" font-weight="bold" font-size="15">CONCENTRADO</text>
+<rect x="52" y="168" width="116" height="24" rx="4" fill="#161619" stroke="var(--brand-primary)" stroke-width="1"/>
+<text x="110" y="184" text-anchor="middle" fill="var(--brand-bright)" font-family="Inter, sans-serif" font-weight="bold" font-size="11">24G PROTEÍNA • 900G</text>
+</svg>
+</div>
+<div class="text-center mt-2 space-y-2">
+<span class="text-xs uppercase tracking-widest text-brandRedBright font-bold">Fórmula Hardcore</span>
+<h3 class="text-2xl font-bold text-white uppercase">Whey Protein Concentrado</h3>
+<p class="text-neutral-400 text-sm">Absorção rápida e máxima pureza para ganho muscular.</p>
+<div class="pt-2 flex items-center justify-center gap-3">
+<span class="text-neutral-500 line-through text-sm">R$ 189,90</span>
+<span id="heroHighlightPrice" class="text-3xl font-sport font-bold text-brandRedBright">R$ 149,90</span>
+</div>
+<button onclick="openProductModal(1)" class="w-full mt-3 bg-neutral-800 hover:bg-brandRed text-white font-bold py-3 rounded-xl transition-all text-sm uppercase tracking-wider">
+Conhecer Produto
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+​<!-- CATÁLOGO DE PRODUTOS -->
+<section id="catalogo" class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+<div>
+<span class="text-brandRedBright font-bold text-xs uppercase tracking-[0.2em]">Linha Profissional</span>
+<h2 class="text-3xl sm:text-5xl font-bold uppercase text-white mt-1">
+CATÁLOGO <span class="text-brandRed" id="catalogBrandAccent">DARLIN</span>
+</h2>
+</div>
+​<!-- Filtros por Objetivo -->
+<div class="flex flex-wrap gap-2" id="categoryFilters">
+<button onclick="setCategory('todos', this)" class="filter-btn active bg-brandRed text-white font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm uppercase transition-all">
+Todos
+</button>
+<button onclick="setCategory('massa', this)" class="filter-btn bg-cardBg hover:bg-neutral-800 text-neutral-300 border border-neutral-800 font-semibold px-4 py-2.5 rounded-xl text-xs sm:text-sm uppercase transition-all">
+Ganhar Massa
+</button>
+<button onclick="setCategory('energia', this)" class="filter-btn bg-cardBg hover:bg-neutral-800 text-neutral-300 border border-neutral-800 font-semibold px-4 py-2.5 rounded-xl text-xs sm:text-sm uppercase transition-all">
+Força & Energia
+</button>
+<button onclick="setCategory('saude', this)" class="filter-btn bg-cardBg hover:bg-neutral-800 text-neutral-300 border border-neutral-800 font-semibold px-4 py-2.5 rounded-xl text-xs sm:text-sm uppercase transition-all">
+Recuperação & Saúde
+</button>
+</div>
+</div>
+​<!-- Grid de Produtos -->
+<div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+<!-- Renderizado via JS -->
+</div>
+​<!-- Estado Vazio na Busca -->
+<div id="emptySearch" class="hidden text-center py-16 bg-cardBg rounded-2xl border border-neutral-800">
+<i data-lucide="search-x" class="w-12 h-12 text-neutral-500 mx-auto mb-3"></i>
+<h3 class="text-xl font-bold text-white uppercase">Nenhum suplemento encontrado</h3>
+<p class="text-neutral-400 text-sm mt-1">Tente buscar por outro nome ou limpe os filtros.</p>
+<button onclick="resetFilters()" class="mt-4 bg-brandRed text-white font-bold px-6 py-2.5 rounded-xl text-sm uppercase">Ver Todos os Produtos</button>
+</div>
+</section>
+​<!-- BANNER INTERMEDIÁRIO IA FIT -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+<div class="bg-gradient-to-r from-neutral-900 via-cardBg to-neutral-900 border border-brandRed/40 rounded-3xl p-6 sm:p-10 flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden">
+<div class="space-y-3 text-center lg:text-left z-10">
+<span class="inline-flex items-center gap-1.5 bg-brandRed/15 text-brandRedBright text-xs font-bold px-3 py-1 rounded-full uppercase">
+<i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Inteligência Artificial Esportiva
+</span>
+<h2 class="text-3xl sm:text-4xl font-bold uppercase text-white">
+PERGUNTE QUALQUER COISA SOBRE TREINO, DIETA OU SUPLEMENTOS
+</h2>
+<p class="text-neutral-300 max-w-xl text-sm sm:text-base">
+Converse agora com a <strong class="text-brandRedBright">IA FIT</strong>! Nosso nutricionista e personal trainer virtual responde suas dúvidas reais, calcula suas metas de proteína e água, e indica os produtos ideais do catálogo.
+</p>
+</div>
+<button onclick="toggleCart(false); toggleChat(true);" class="w-full sm:w-auto shrink-0 bg-brandRed hover:bg-brandRedBright text-white font-sport text-xl font-bold uppercase px-8 py-4 rounded-2xl shadow-red-glow transition-all flex items-center justify-center gap-3 active:scale-95">
+<i data-lucide="bot" class="w-6 h-6"></i> FALAR COM IA FIT AGORA
+</button>
+</div>
+</section>
+​<!-- DEPOIMENTOS DE CLIENTES -->
+<section id="depoimentos" class="py-16 bg-cardBg/50 border-t border-neutral-900">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="text-brandRedBright font-bold text-xs uppercase tracking-[0.2em]">Tropa Darlin</span>
+<h2 class="text-3xl sm:text-5xl font-bold uppercase text-white mt-1">
+QUEM TREINA SÉRIO <span class="text-brandRed">APROVA</span>
+</h2>
+<p class="text-neutral-400 text-sm sm:text-base mt-2">Resultados reais de atletas que transformaram o shape com a nossa linha.</p>
+</div>
+​<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-cardBg border border-neutral-800 p-6 rounded-2xl flex flex-col justify-between space-y-4">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex text-brandRedBright">★★★★★</div>
+<span class="text-xs bg-brandRed/10 text-brandRedBright px-2.5 py-1 rounded-full font-semibold">+5kg Massa Magra</span>
+</div>
+<p class="text-neutral-300 text-sm leading-relaxed italic">
+"O Whey e a Creatina da Darlin são absurdos! Sabor top, diluição perfeita e em 2 meses subi todas as cargas no supino. Entrega chegou no dia seguinte!"
+</p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-neutral-800/80">
+<div class="w-11 h-11 rounded-full bg-brandRed/20 border border-brandRed flex items-center justify-center font-sport font-bold text-brandRedBright text-lg">RM</div>
+<div>
+<h4 class="font-bold text-white text-sm">Rafael Mendes</h4>
+<span class="text-xs text-neutral-400">Atleta Amador • Cliente Verificado</span>
+</div>
+</div>
+</div>
+​<div class="bg-cardBg border border-neutral-800 p-6 rounded-2xl flex flex-col justify-between space-y-4">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex text-brandRedBright">★★★★★</div>
+<span class="text-xs bg-brandRed/10 text-brandRedBright px-2.5 py-1 rounded-full font-semibold">Foco & Energia</span>
+</div>
+<p class="text-neutral-300 text-sm leading-relaxed italic">
+"Treino às 6h da manhã antes do trabalho e o Pré-treino Insano salvou minha rotina. Dá um gás limpo, pump sinistro e zero taquicardia ruim. Melhor marca!"
+</p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-neutral-800/80">
+<div class="w-11 h-11 rounded-full bg-brandRed/20 border border-brandRed flex items-center justify-center font-sport font-bold text-brandRedBright text-lg">CS</div>
+<div>
+<h4 class="font-bold text-white text-sm">Camila Souza</h4>
+<span class="text-xs text-neutral-400">Crossfit & Musculação • Cliente Verificada</span>
+</div>
+</div>
+</div>
+​<div class="bg-cardBg border border-neutral-800 p-6 rounded-2xl flex flex-col justify-between space-y-4">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex text-brandRedBright">★★★★★</div>
+<span class="text-xs bg-brandRed/10 text-brandRedBright px-2.5 py-1 rounded-full font-semibold">Bulking Limpo</span>
+</div>
+<p class="text-neutral-300 text-sm leading-relaxed italic">
+"Eu tinha muita dificuldade de ganhar peso. A IA FIT do site calculou minha proteína e me indicou o Hipercalórico + Creatina. Já ganhei 4,5kg com qualidade!"
+</p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-neutral-800/80">
+<div class="w-11 h-11 rounded-full bg-brandRed/20 border border-brandRed flex items-center justify-center font-sport font-bold text-brandRedBright text-lg">LT</div>
+<div>
+<h4 class="font-bold text-white text-sm">Lucas Teixeira</h4>
+<span class="text-xs text-neutral-400">Hipertrofia • Cliente Verificado</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+​<!-- RODAPÉ -->
+<footer class="bg-black border-t border-neutral-900 py-12 text-neutral-400 text-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<i data-lucide="dumbbell" class="w-6 h-6 text-brandRedBright"></i>
+<span class="font-sport text-2xl font-bold text-white" id="footerStoreName">DARLIN <span class="text-brandRed">SUPLEMENTOS</span></span>
+</div>
+<p class="text-xs leading-relaxed text-neutral-400">
+Sua loja especializada em suplementação esportiva de alta pureza. Qualidade hardcore garantida para quem treina sério.
+</p>
+</div>
+<div class="space-y-2">
+<h4 class="font-sport text-white uppercase text-lg">Atendimento & Links</h4>
+<ul class="space-y-1.5 text-xs">
+<li><a href="#catalogo" class="hover:text-brandRedBright transition-colors">Catálogo Completo</a></li>
+<li><button onclick="toggleCart(false); toggleChat(true);" class="hover:text-brandRedBright transition-colors">Consultoria Grátis IA FIT</button></li>
+<li><button onclick="openAdminGate()" class="hover:text-brandRedBright transition-colors">Painel Administrativo (Owner)</button></li>
+</ul>
+</div>
+<div class="space-y-2">
+<h4 class="font-sport text-white uppercase text-lg">Pagamento 100% Seguro</h4>
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="bg-cardBg border border-neutral-800 px-3 py-1.5 rounded-lg text-xs text-white font-semibold">PIX Instantâneo</span>
+<span class="bg-cardBg border border-neutral-800 px-3 py-1.5 rounded-lg text-xs text-white font-semibold">Cartão até 6x</span>
+<span class="bg-cardBg border border-neutral-800 px-3 py-1.5 rounded-lg text-xs text-white font-semibold">Boleto</span>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-neutral-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-neutral-500">
+<span>© 2026 <span id="footerCopyName">DARLIN SUPLEMENTOS</span>. Todos os direitos reservados.</span>
+<button onclick="openAdminGate()" class="text-neutral-400 hover:text-brandRed transition-colors flex items-center gap-1">
+<i data-lucide="lock" class="w-3.5 h-3.5"></i> Acessar Painel do Dono
+</button>
+</div>
+</footer>
+​<!-- ==========================================
+MODAL DE DETALHES DO PRODUTO
+=========================================== -->
+<div id="productModal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-sm overflow-y-auto p-4 sm:p-6 flex items-center justify-center">
+<div class="bg-cardBg border border-neutral-800 w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl relative my-auto">
+<button onclick="closeProductModal()" class="absolute top-4 right-4 z-10 bg-neutral-900 hover:bg-brandRed text-white p-2.5 rounded-xl transition-all" aria-label="Fechar detalhes">
+<i data-lucide="x" class="w-6 h-6"></i>
+</button>
+<div id="productModalContent" class="grid md:grid-cols-12 gap-6 p-6 sm:p-8">
+<!-- Preenchido via JS -->
+</div>
+</div>
+</div>
+​<!-- ==========================================
+DRAWER DO CARRINHO DE COMPRAS
+=========================================== -->
+<div id="cartDrawer" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex justify-end">
+<div class="bg-darkBg border-l border-neutral-800 w-full max-w-md h-full flex flex-col justify-between shadow-2xl">
+<div class="p-5 border-b border-neutral-800 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<i data-lucide="shopping-bag" class="w-6 h-6 text-brandRedBright"></i>
+<h3 class="font-sport text-2xl font-bold uppercase text-white">Seu Carrinho</h3>
+</div>
+<button onclick="toggleCart(false)" class="p-2 text-neutral-400 hover:text-white bg-cardBg rounded-xl">
+<i data-lucide="x" class="w-5 h-5"></i>
+</button>
+</div>
+​<div id="cartItemsList" class="flex-1 overflow-y-auto p-5 space-y-4">
+<!-- Itens via JS -->
+</div>
+​<div id="cartFooter" class="p-5 bg-cardBg border-t border-neutral-800 space-y-4">
+<div>
+<label class="text-xs text-neutral-400 uppercase font-bold block mb-1.5" id="cartCouponLabel">Cupom de Desconto (Teste: DARLIN20)</label>
+<div class="flex gap-2">
+<input type="text" id="couponInput" placeholder="Digite o cupom" class="flex-1 bg-darkBg border border-neutral-700 focus:border-brandRed rounded-xl px-3.5 py-2.5 text-sm text-white uppercase outline-none">
+<button onclick="applyCouponFromInput()" class="bg-neutral-800 hover:bg-brandRed text-white font-bold px-4 py-2.5 rounded-xl text-xs uppercase transition-all">
+Aplicar
+</button>
+</div>
+<p id="couponFeedback" class="text-xs mt-1.5 hidden"></p>
+</div>
+​<div class="space-y-1.5 text-sm border-t border-neutral-800 pt-3">
+<div class="flex justify-between text-neutral-400">
+<span>Subtotal:</span>
+<span id="cartSubtotal">R$ 0,00</span>
+</div>
+<div id="discountRow" class="flex justify-between text-brandRedBright font-semibold hidden">
+<span>Desconto (<span id="discountPctDisplay">20</span>% OFF):</span>
+<span id="cartDiscount">- R$ 0,00</span>
+</div>
+<div class="flex justify-between text-white font-bold text-lg pt-1">
+<span>Total:</span>
+<span id="cartTotal" class="font-sport text-2xl text-brandRedBright">R$ 0,00</span>
+</div>
+</div>
+​<button onclick="openCheckout()" id="checkoutBtn" class="w-full bg-brandRed hover:bg-brandRedBright text-white font-sport text-xl font-bold uppercase py-4 rounded-xl shadow-red-glow transition-all flex items-center justify-center gap-2 active:scale-95">
+FINALIZAR COMPRA <i data-lucide="arrow-right" class="w-5 h-5"></i>
+</button>
+</div>
+</div>
+</div>
+​<!-- ==========================================
+MODAL DE CHECKOUT
+=========================================== -->
+<div id="checkoutModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md overflow-y-auto p-4 sm:p-6 flex items-center justify-center">
+<div class="bg-cardBg border border-neutral-800 w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl my-auto">
+<div class="bg-neutral-900 px-6 py-4 border-b border-neutral-800 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<i data-lucide="shield-check" class="w-6 h-6 text-brandRedBright"></i>
+<h3 class="font-sport text-2xl font-bold uppercase text-white">Finalizar Pedido</h3>
+</div>
+<button onclick="closeCheckout()" class="p-2 text-neutral-400 hover:text-white rounded-xl bg-darkBg">
+<i data-lucide="x" class="w-5 h-5"></i>
+</button>
+</div>
+​<div id="checkoutBody" class="p-6 sm:p-8 space-y-6">
+<div>
+<h4 class="font-sport text-lg uppercase text-brandRedBright mb-3">1. Dados de Entrega</h4>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<input type="text" id="custName" placeholder="Nome Completo *" class="bg-darkBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-3 text-sm text-white outline-none">
+<input type="text" id="custCpf" placeholder="CPF (000.000.000-00) *" class="bg-darkBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-3 text-sm text-white outline-none">
+<input type="text" id="custCep" placeholder="CEP *" class="bg-darkBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-3 text-sm text-white outline-none">
+<input type="text" id="custAddress" placeholder="Endereço e Número *" class="bg-darkBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-3 text-sm text-white outline-none">
+</div>
+</div>
+​<div>
+<h4 class="font-sport text-lg uppercase text-brandRedBright mb-3">2. Escolha o Pagamento</h4>
+<div class="grid grid-cols-3 gap-2.5 mb-4">
+<button type="button" onclick="selectPaymentMethod('pix')" id="tab-pix" class="pay-tab bg-brandRed text-white font-bold py-3 px-2 rounded-xl text-xs sm:text-sm uppercase flex items-center justify-center gap-1.5 transition-all">
+<i data-lucide="qr-code" class="w-4 h-4"></i> PIX
+</button>
+<button type="button" onclick="selectPaymentMethod('card')" id="tab-card" class="pay-tab bg-darkBg text-neutral-300 border border-neutral-700 font-bold py-3 px-2 rounded-xl text-xs sm:text-sm uppercase flex items-center justify-center gap-1.5 transition-all">
+<i data-lucide="credit-card" class="w-4 h-4"></i> Cartão
+</button>
+<button type="button" onclick="selectPaymentMethod('boleto')" id="tab-boleto" class="pay-tab bg-darkBg text-neutral-300 border border-neutral-700 font-bold py-3 px-2 rounded-xl text-xs sm:text-sm uppercase flex items-center justify-center gap-1.5 transition-all">
+<i data-lucide="barcode" class="w-4 h-4"></i> Boleto
+</button>
+</div>
+​<!-- PIX -->
+<div id="panel-pix" class="bg-darkBg border border-neutral-800 rounded-2xl p-5 text-center space-y-3">
+<span class="bg-brandRed/15 text-brandRedBright text-xs font-bold px-3 py-1 rounded-full">Aprovação Imediata</span>
+<div class="w-36 h-36 mx-auto bg-white p-2.5 rounded-xl flex items-center justify-center">
+<svg viewBox="0 0 100 100" class="w-full h-full">
+<rect width="100" height="100" fill="#fff"/>
+<path d="M10,10 h25 v25 h-25 z M15,15 v15 h15 v-15 z M20,20 h5 v5 h-5 z" fill="#000"/>
+<path d="M65,10 h25 v25 h-25 z M70,15 v15 h15 v-15 z M75,20 h5 v5 h-5 z" fill="#000"/>
+<path d="M10,65 h25 v25 h-25 z M15,70 v15 h15 v-15 z M20,75 h5 v5 h-5 z" fill="#000"/>
+<path d="M42,12 h6 v12 h-6 z M52,18 h8 v8 h-8 z M40,35 h20 v6 h-20 z M12,45 h18 v6 h-18 z M45,48 h12 v12 h-12 z M68,45 h20 v8 h-20 z M42,68 h10 v20 h-10 z M62,65 h12 v10 h-12 z M78,75 h12 v15 h-12 z" fill="#000"/>
+</svg>
+</div>
+<p class="text-xs text-neutral-400">Chave PIX Copia e Cola:</p>
+<div class="flex items-center gap-2 max-w-md mx-auto">
+<input type="text" readonly value="00020126580014BR.GOV.BCB.PIX0136darlin-suplementos-pagamentos" class="w-full bg-cardBg border border-neutral-700 rounded-lg px-3 py-2 text-xs text-neutral-300 font-mono">
+<button onclick="showToast('Chave PIX copiada!')" class="bg-brandRed text-white font-bold px-3 py-2 rounded-lg text-xs uppercase shrink-0">Copiar</button>
+</div>
+</div>
+​<!-- Cartão -->
+<div id="panel-card" class="hidden bg-darkBg border border-neutral-800 rounded-2xl p-5 space-y-3">
+<input type="text" placeholder="Número do Cartão (0000 0000 0000 0000)" class="w-full bg-cardBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-3 text-sm text-white outline-none">
+<input type="text" placeholder="Nome Impresso no Cartão" class="w-full bg-cardBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-3 text-sm text-white outline-none">
+<div class="grid grid-cols-3 gap-3">
+<input type="text" placeholder="MM/AA" class="bg-cardBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-3 text-sm text-white outline-none">
+<input type="text" placeholder="CVV" class="bg-cardBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-3 text-sm text-white outline-none">
+<select class="bg-cardBg border border-neutral-700 focus:border-brandRed rounded-xl px-3 py-3 text-xs sm:text-sm text-white outline-none">
+<option>1x sem juros</option>
+<option>2x sem juros</option>
+<option>3x sem juros</option>
+<option>6x sem juros</option>
+</select>
+</div>
+</div>
+​<!-- Boleto -->
+<div id="panel-boleto" class="hidden bg-darkBg border border-neutral-800 rounded-2xl p-5 text-center space-y-3">
+<p class="text-sm text-neutral-300">O boleto vence em 2 dias úteis. Compensação em até 24h.</p>
+<div class="bg-white p-3 rounded-xl max-w-md mx-auto">
+<div class="h-10 w-full bg-[repeating-linear-gradient(90deg,#000,#000_2px,#fff_2px,#fff_5px,#000_5px,#000_9px,#fff_9px,#fff_11px)]"></div>
+<p class="text-black font-mono text-[11px] mt-1 font-bold">34191.79001 01043.510047 91020.150008 8 98760000014990</p>
+</div>
+<button onclick="showToast('Linha digitável copiada!')" class="bg-neutral-800 hover:bg-brandRed text-white font-bold px-4 py-2 rounded-lg text-xs uppercase transition-all">
+Copiar Código de Barras
+</button>
+</div>
+</div>
+​<div class="bg-neutral-900 p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 border border-neutral-800">
+<div>
+<span class="text-xs text-neutral-400 uppercase block">Total a Pagar</span>
+<span id="checkoutTotalDisplay" class="font-sport text-3xl font-bold text-brandRedBright">R$ 0,00</span>
+</div>
+<button onclick="confirmOrder()" class="w-full sm:w-auto bg-brandRed hover:bg-brandRedBright text-white font-sport text-xl font-bold uppercase px-8 py-4 rounded-xl shadow-red-glow transition-all active:scale-95">
+CONFIRMAR PEDIDO
+</button>
+</div>
+</div>
+​<div id="orderSuccessScreen" class="hidden p-8 sm:p-12 text-center space-y-5">
+<div class="w-20 h-20 rounded-full bg-brandRed/20 border-2 border-brandRed text-brandRedBright flex items-center justify-center mx-auto animate-bounce">
+<i data-lucide="check" class="w-10 h-10"></i>
+</div>
+<h3 class="font-sport text-4xl font-bold uppercase text-white">PEDIDO CONFIRMADO, ATLETA!</h3>
+<p class="text-neutral-300 max-w-md mx-auto text-sm">
+Seu pedido <strong id="orderNumberDisplay" class="text-brandRedBright font-mono">#DAR-8492</strong> foi recebido e já está sendo separado pela nossa equipe!
+</p>
+<button onclick="finishAndResetOrder()" class="bg-brandRed text-white font-sport text-lg font-bold uppercase px-8 py-3.5 rounded-xl shadow-red-glow">
+VOLTAR PARA A LOJA
+</button>
+</div>
+</div>
+</div>
+​<!-- ==========================================
+MODAL DE LOGIN ADMIN
+=========================================== -->
+<div id="adminLoginModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md p-4 flex items-center justify-center">
+<div class="bg-cardBg border border-neutral-800 w-full max-w-md rounded-3xl p-6 sm:p-8 space-y-5 shadow-2xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<i data-lucide="lock" class="w-6 h-6 text-brandRedBright"></i>
+<h3 class="font-sport text-2xl font-bold uppercase text-white">Acesso Owner</h3>
+</div>
+<button onclick="closeAdminLogin()" class="p-2 text-neutral-400 hover:text-white bg-darkBg rounded-xl">
+<i data-lucide="x" class="w-5 h-5"></i>
+</button>
+</div>
+<p class="text-xs text-neutral-400">Entre com suas credenciais de administrador para editar produtos, preços, temas e IA. 
+<span class="text-brandRedBright font-mono">(Padrão: admin / darlin123)</span></p>
+<form onsubmit="handleAdminLogin(event)" class="space-y-4">
+<div>
+<label class="text-xs text-neutral-400 uppercase font-bold block mb-1">Usuário</label>
+<input type="text" id="adminUser" value="admin" required class="w-full bg-darkBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-3 text-sm text-white outline-none">
+</div>
+<div>
+<label class="text-xs text-neutral-400 uppercase font-bold block mb-1">Senha</label>
+<input type="password" id="adminPass" value="darlin123" required class="w-full bg-darkBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-3 text-sm text-white outline-none">
+</div>
+<button type="submit" class="w-full bg-brandRed hover:bg-brandRedBright text-white font-sport text-lg font-bold uppercase py-3.5 rounded-xl shadow-red-glow">
+Entrar no Painel
+</button>
+</form>
+</div>
+</div>
+​<!-- ==========================================
+PAINEL ADMINISTRATIVO (OWNER)
+=========================================== -->
+<div id="adminModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md overflow-y-auto p-4 sm:p-6 flex items-center justify-center">
+<div class="bg-cardBg border border-neutral-800 w-full max-w-5xl rounded-3xl overflow-hidden shadow-2xl my-auto flex flex-col max-h-[90vh]">
+<div class="bg-neutral-900 px-6 py-4 border-b border-neutral-800 flex items-center justify-between shrink-0">
+<div class="flex items-center gap-2.5">
+<i data-lucide="shield-alert" class="w-6 h-6 text-brandRedBright"></i>
+<div>
+<h3 class="font-sport text-2xl font-bold uppercase text-white">Painel Administrativo (Owner)</h3>
+<p class="text-xs text-neutral-400">Edite produtos, preços, temas da academia e configurações da IA FIT.</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button onclick="logoutAdmin()" class="text-xs bg-neutral-800 hover:bg-red-900/50 text-neutral-300 px-3 py-2 rounded-xl font-semibold">Sair</button>
+<button onclick="closeAdminModal()" class="p-2 text-neutral-400 hover:text-white rounded-xl bg-darkBg">
+<i data-lucide="x" class="w-5 h-5"></i>
+</button>
+</div>
+</div>
+​<!-- Abas do Admin -->
+<div class="flex border-b border-neutral-800 bg-neutral-900/60 px-6 shrink-0 overflow-x-auto">
+<button onclick="switchAdminTab('products')" id="adminTabProducts" class="admin-tab py-3 px-5 border-b-2 border-brandRed text-brandRedBright font-bold text-sm uppercase transition-all shrink-0">
+📦 Produtos & Preços
+</button>
+<button onclick="switchAdminTab('themes')" id="adminTabThemes" class="admin-tab py-3 px-5 border-b-2 border-transparent text-neutral-400 hover:text-white font-semibold text-sm uppercase transition-all shrink-0">
+🎨 Temas & Cores
+</button>
+<button onclick="switchAdminTab('settings')" id="adminTabSettings" class="admin-tab py-3 px-5 border-b-2 border-transparent text-neutral-400 hover:text-white font-semibold text-sm uppercase transition-all shrink-0">
+⚙️ Loja, Textos & IA API
+</button>
+</div>
+​<!-- Conteúdo do Painel -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Seção Produtos -->
+<div id="adminSectionProducts" class="space-y-6">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<h4 class="font-sport text-xl uppercase text-white">Produtos Cadastrados</h4>
+<button onclick="openProductEditor()" class="bg-brandRed hover:bg-brandRedBright text-white font-bold px-4 py-2.5 rounded-xl text-xs uppercase flex items-center gap-2 shadow-red-sm">
+<i data-lucide="plus" class="w-4 h-4"></i> Adicionar Novo Produto
+</button>
+</div>
+​<div class="bg-darkBg border border-neutral-800 rounded-2xl overflow-x-auto">
+<table class="w-full text-left border-collapse text-sm">
+<thead>
+<tr class="border-b border-neutral-800 text-neutral-400 text-xs uppercase bg-neutral-900/50">
+<th class="p-4">Produto</th>
+<th class="p-4">Categoria</th>
+<th class="p-4">Preço</th>
+<th class="p-4">Avaliação</th>
+<th class="p-4 text-right">Ações</th>
+</tr>
+</thead>
+<tbody id="adminProductsTableBody"></tbody>
+</table>
+</div>
+</div>
+​<!-- Seção Temas -->
+<div id="adminSectionThemes" class="hidden space-y-6">
+<h4 class="font-sport text-xl uppercase text-white">Escolha o Tema Visual da Academia</h4>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<button onclick="applyThemePreset('crimson')" class="bg-darkBg border-2 border-red-600 p-4 rounded-2xl text-left space-y-2 hover:scale-[1.02] transition-transform">
+<div class="flex gap-1.5">
+<span class="w-6 h-6 rounded-full bg-[#dc2626]"></span>
+<span class="w-6 h-6 rounded-full bg-[#0d0d0f] border border-neutral-700"></span>
+</div>
+<h5 class="font-sport text-lg text-white uppercase">Crimson Iron (Padrão)</h5>
+<p class="text-xs text-neutral-400">Vermelho intenso não-neon e preto fosco.</p>
+</button>
+​<button onclick="applyThemePreset('gold')" class="bg-darkBg border border-neutral-800 hover:border-amber-500 p-4 rounded-2xl text-left space-y-2 hover:scale-[1.02] transition-transform">
+<div class="flex gap-1.5">
+<span class="w-6 h-6 rounded-full bg-[#d97706]"></span>
+<span class="w-6 h-6 rounded-full bg-[#0c0a09] border border-neutral-700"></span>
+</div>
+<h5 class="font-sport text-lg text-white uppercase">Olympia Gold</h5>
+<p class="text-xs text-neutral-400">Dourado clássico fisiculturismo & preto.</p>
+</button>
+​<button onclick="applyThemePreset('cobalt')" class="bg-darkBg border border-neutral-800 hover:border-blue-500 p-4 rounded-2xl text-left space-y-2 hover:scale-[1.02] transition-transform">
+<div class="flex gap-1.5">
+<span class="w-6 h-6 rounded-full bg-[#2563eb]"></span>
+<span class="w-6 h-6 rounded-full bg-[#090d16] border border-neutral-700"></span>
+</div>
+<h5 class="font-sport text-lg text-white uppercase">Steel Blue</h5>
+<p class="text-xs text-neutral-400">Azul aço esportivo e grafite escuro.</p>
+</button>
+​<button onclick="applyThemePreset('bordeaux')" class="bg-darkBg border border-neutral-800 hover:border-rose-700 p-4 rounded-2xl text-left space-y-2 hover:scale-[1.02] transition-transform">
+<div class="flex gap-1.5">
+<span class="w-6 h-6 rounded-full bg-[#be123c]"></span>
+<span class="w-6 h-6 rounded-full bg-[#120b0d] border border-neutral-700"></span>
+</div>
+<h5 class="font-sport text-lg text-white uppercase">Blood Bordeaux</h5>
+<p class="text-xs text-neutral-400">Bordô escuro agressivo hardcore.</p>
+</button>
+</div>
+</div>
+​<!-- Seção Configurações -->
+<div id="adminSectionSettings" class="hidden space-y-6 max-w-2xl">
+<h4 class="font-sport text-xl uppercase text-white">Configurações Gerais & IA FIT</h4>
+<div class="space-y-4 bg-darkBg border border-neutral-800 p-6 rounded-2xl">
+<div>
+<label class="text-xs text-neutral-400 uppercase font-bold block mb-1.5">Nome da Loja</label>
+<input type="text" id="settingStoreName" class="w-full bg-cardBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-3 text-sm text-white outline-none">
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="text-xs text-neutral-400 uppercase font-bold block mb-1.5">Cupom Principal</label>
+<input type="text" id="settingCouponCode" class="w-full bg-cardBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-3 text-sm text-white uppercase outline-none">
+</div>
+<div>
+<label class="text-xs text-neutral-400 uppercase font-bold block mb-1.5">Desconto do Cupom (%)</label>
+<input type="number" id="settingCouponDiscount" class="w-full bg-cardBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-3 text-sm text-white outline-none">
+</div>
+</div>
+<div class="pt-3 border-t border-neutral-800 space-y-3">
+<label class="text-xs text-brandRedBright uppercase font-bold block">API Externa Opcional (Gemini ou OpenAI)</label>
+<select id="settingAiProvider" class="w-full bg-cardBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+<option value="offline">Motor Semântico Inteligente Integrado (Gratuito / Sem Chave)</option>
+<option value="gemini">Google Gemini API (AIza...)</option>
+<option value="openai">OpenAI API (sk-...)</option>
+</select>
+<input type="password" id="settingAiApiKey" placeholder="Cole sua chave API (AIza... ou sk-...) se desejar" class="w-full bg-cardBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-3 text-sm text-white outline-none">
+<span class="text-[11px] text-neutral-500 block">Mesmo sem chave API, o Motor Semântico Integrado responde perguntas reais sobre dieta, treino, cálculos nutricionais e produtos sem nunca repetir falas.</span>
+</div>
+<div class="pt-2 flex gap-3">
+<button onclick="saveGlobalSettings()" class="bg-brandRed hover:bg-brandRedBright text-white font-sport text-lg font-bold uppercase px-6 py-3 rounded-xl shadow-red-glow">
+Salvar Configurações
+</button>
+<button onclick="resetAllStoreData()" class="bg-neutral-800 hover:bg-neutral-700 text-neutral-300 font-bold px-4 py-3 rounded-xl text-xs uppercase">
+Restaurar Padrão de Fábrica
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+​<!-- ==========================================
+MODAL DE EDIÇÃO / CRIAÇÃO DE PRODUTO (ADMIN)
+=========================================== -->
+<div id="productEditorModal" class="fixed inset-0 z-[60] hidden bg-black/90 backdrop-blur-md overflow-y-auto p-4 sm:p-6 flex items-center justify-center">
+<div class="bg-cardBg border border-neutral-800 w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl my-auto">
+<div class="bg-neutral-900 px-6 py-4 border-b border-neutral-800 flex items-center justify-between">
+<h3 id="editorModalTitle" class="font-sport text-xl font-bold uppercase text-white">Editar Produto</h3>
+<button onclick="closeProductEditor()" class="p-2 text-neutral-400 hover:text-white rounded-xl bg-darkBg">
+<i data-lucide="x" class="w-5 h-5"></i>
+</button>
+</div>
+<div class="p-6 space-y-4 max-h-[75vh] overflow-y-auto">
+<input type="hidden" id="editProductId">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="text-xs text-neutral-400 uppercase font-bold block mb-1">Nome do Produto</label>
+<input type="text" id="editName" class="w-full bg-darkBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+</div>
+<div>
+<label class="text-xs text-neutral-400 uppercase font-bold block mb-1">Preço (R$)</label>
+<input type="number" step="0.01" id="editPrice" class="w-full bg-darkBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+</div>
+<div>
+<label class="text-xs text-neutral-400 uppercase font-bold block mb-1">Categoria</label>
+<select id="editCategory" class="w-full bg-darkBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+<option value="massa">Ganhar Massa</option>
+<option value="energia">Força & Energia</option>
+<option value="saude">Recuperação & Saúde</option>
+</select>
+</div>
+<div>
+<label class="text-xs text-neutral-400 uppercase font-bold block mb-1">Peso / Porção</label>
+<input type="text" id="editWeight" class="w-full bg-darkBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+</div>
+<div>
+<label class="text-xs text-neutral-400 uppercase font-bold block mb-1">Tag (Ex: Mais Vendido)</label>
+<input type="text" id="editTag" class="w-full bg-darkBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+</div>
+<div>
+<label class="text-xs text-neutral-400 uppercase font-bold block mb-1">Avaliação (1.0 a 5.0)</label>
+<input type="number" step="0.1" max="5" min="1" id="editRating" class="w-full bg-darkBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+</div>
+</div>
+<div>
+<label class="text-xs text-neutral-400 uppercase font-bold block mb-1">Descrição Curta</label>
+<input type="text" id="editShortDesc" class="w-full bg-darkBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+</div>
+<div>
+<label class="text-xs text-neutral-400 uppercase font-bold block mb-1">Descrição Completa</label>
+<textarea id="editDescription" rows="3" class="w-full bg-darkBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-2.5 text-sm text-white outline-none"></textarea>
+</div>
+<div>
+<label class="text-xs text-neutral-400 uppercase font-bold block mb-1">Como Tomar</label>
+<textarea id="editHowToUse" rows="2" class="w-full bg-darkBg border border-neutral-700 focus:border-brandRed rounded-xl px-4 py-2.5 text-sm text-white outline-none"></textarea>
+</div>
+<div class="pt-3 flex justify-end gap-3">
+<button onclick="closeProductEditor()" class="bg-neutral-800 text-white font-bold px-5 py-2.5 rounded-xl text-xs uppercase">Cancelar</button>
+<button onclick="saveProductFromAdmin()" class="bg-brandRed hover:bg-brandRedBright text-white font-bold px-6 py-2.5 rounded-xl text-xs uppercase shadow-red-sm">Salvar Produto</button>
+</div>
+</div>
+</div>
+</div>
+​<!-- ==========================================
+ASSISTENTE DE IA FLUTUANTE ("IA FIT")
+=========================================== -->
+<button onclick="toggleCart(false); toggleChat();" id="chatToggleBtn" class="fixed bottom-5 right-5 z-40 bg-brandRed hover:bg-brandRedBright text-white font-bold px-4 py-3.5 rounded-2xl shadow-red-glow animate-red-pulse flex items-center gap-2.5 transition-transform hover:scale-105 active:scale-95">
+<div class="relative">
+<i data-lucide="bot" class="w-7 h-7"></i>
+<span class="absolute -top-1 -right-1 w-3 h-3 bg-black rounded-full border-2 border-brandRed"></span>
+</div>
+<div class="text-left leading-tight">
+<span class="font-sport text-lg font-bold block uppercase">IA FIT</span>
+<span class="text-[10px] font-extrabold uppercase tracking-wider opacity-80">Nutri & Personal</span>
+</div>
+</button>
+​<!-- Janela do Chatbot -->
+<div id="aiChatWindow" class="fixed bottom-24 right-4 sm:right-5 z-50 hidden w-[calc(100vw-2rem)] sm:w-96 bg-darkBg border-2 border-brandRed/60 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[78vh]">
+<div class="bg-gradient-to-r from-neutral-900 to-black p-4 border-b border-neutral-800 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-brandRed text-white flex items-center justify-center font-bold shadow-red-sm">
+<i data-lucide="bot" class="w-6 h-6"></i>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-sport text-lg font-bold text-white uppercase">IA FIT</h4>
+<span class="w-2 h-2 rounded-full bg-brandRedBright animate-ping"></span>
+</div>
+<span class="text-xs text-brandRedBright font-medium">Nutricionista & Personal Virtual</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button onclick="resetChatSession()" title="Nova conversa" class="text-neutral-400 hover:text-white p-1.5 rounded-lg bg-cardBg">
+<i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+</button>
+<button onclick="toggleChat(false)" class="text-neutral-400 hover:text-white p-1.5 rounded-lg bg-cardBg">
+<i data-lucide="x" class="w-5 h-5"></i>
+</button>
+</div>
+</div>
+​<div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-3 text-sm bg-[#0a0a0c]">
+<!-- Mensagens via JS -->
+</div>
+​<div class="px-3 py-2 bg-cardBg border-t border-neutral-800 flex gap-1.5 overflow-x-auto no-scrollbar">
+<button onclick="sendQuickPrompt('Quanto de proteína devo comer por dia?')" class="shrink-0 bg-neutral-800 hover:bg-brandRed text-neutral-200 text-xs px-3 py-1.5 rounded-full transition-colors font-medium">
+🥩 Cálculo de proteína
+</button>
+<button onclick="sendQuickPrompt('Creatina faz mal aos rins? Como tomar?')" class="shrink-0 bg-neutral-800 hover:bg-brandRed text-neutral-200 text-xs px-3 py-1.5 rounded-full transition-colors font-medium">
+⚡ Creatina faz mal?
+</button>
+<button onclick="sendQuickPrompt('Tenho 80kg e quero ganhar massa')" class="shrink-0 bg-neutral-800 hover:bg-brandRed text-neutral-200 text-xs px-3 py-1.5 rounded-full transition-colors font-medium">
+💪 Tenho 80kg, quero massa
+</button>
+<button onclick="sendQuickPrompt('Posso misturar creatina e pré-treino?')" class="shrink-0 bg-neutral-800 hover:bg-brandRed text-neutral-200 text-xs px-3 py-1.5 rounded-full transition-colors font-medium">
+🔥 Creatina + Pré-treino?
+</button>
+<button onclick="sendQuickPrompt('Qual o melhor treino para hipertrofia?')" class="shrink-0 bg-neutral-800 hover:bg-brandRed text-neutral-200 text-xs px-3 py-1.5 rounded-full transition-colors font-medium">
+🏋️ Divisão de treino
+</button>
+</div>
+​<form onsubmit="handleChatSubmit(event)" class="p-3 bg-cardBg border-t border-neutral-800 flex gap-2">
+<input type="text" id="chatInput" placeholder="Pergunte qualquer coisa sobre treino, dieta ou suplementos..." autocomplete="off"
+class="flex-1 bg-darkBg border border-neutral-700 focus:border-brandRed rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-neutral-500 outline-none">
+<button type="submit" class="bg-brandRed hover:bg-brandRedBright text-white p-2.5 rounded-xl font-bold transition-all active:scale-95" aria-label="Enviar">
+<i data-lucide="send" class="w-5 h-5"></i>
+</button>
+</form>
+</div>
+​<!-- TOAST NOTIFICATION -->
+<div id="toastBox" class="fixed top-24 right-5 z-[70] hidden bg-neutral-900 border border-brandRed text-white px-4 py-3 rounded-xl shadow-red-glow flex items-center gap-2.5 text-sm font-semibold">
+<i data-lucide="check-circle-2" class="w-5 h-5 text-brandRedBright"></i>
+<span id="toastMessage">Ação realizada!</span>
+</div>
+​<!-- ==========================================
+JAVASCRIPT DA APLICAÇÃO
+=========================================== -->
+<script>
+// PRODUTOS PADRÃO (COM PREÇOS EXATOS)
+const DEFAULT_PRODUCTS = [
+{
+id: 1,
+name: "Whey Protein Concentrado",
+price: 149.90,
+rating: 4.9,
+reviews: 342,
+category: "massa",
+tag: "Mais Vendido",
+weight: "900g",
+shortDesc: "24g de proteína pura e 5,5g de BCAA por dose para hipertrofia máxima.",
+description: "O Whey Protein Concentrado da Darlin Suplementos é filtrado com tecnologia avançada para preservar frações proteicas bioativas. Ideal para recuperação pós-treino e ganho sólido de massa magra.",
+benefits: [
+"24g de proteína de alto valor biológico por porção",
+"Rico em aminoácidos essenciais (5,5g de BCAA)",
+"Rápida absorção e excelente digestibilidade",
+"Auxilia na síntese proteica e saciedade"
+],
+howToUse: "Diluir 1 scoop (30g) em 200ml de água gelada ou leite desnatado. Consumir logo após o treino ou entre as refeições.",
+svgLabel: "WHEY 100%"
+},
+{
+id: 2,
+name: "Creatina Monohidratada 300g",
+price: 99.90,
+rating: 5.0,
+reviews: 518,
+category: "energia",
+tag: "100% Pura",
+weight: "300g",
+shortDesc: "Explosão de força, aumento de volume celular e resistência nos treinos pesados.",
+description: "Creatina Monohidratada micronizada com grau de pureza farmacêutico. Aumenta os estoques de fosfocreatina intramuscular para mais repetições e cargas maiores.",
+benefits: [
+"Aumento comprovado de força e potência muscular",
+"Melhora a explosão em treinos de alta intensidade",
+"Promove volumização e hidratação celular",
+"Rende 100 doses de 3g cada"
+],
+howToUse: "Ingerir 1 dosador (3g a 5g) diluído em 150ml de água, todos os dias (inclusive nos dias sem treino).",
+svgLabel: "CREATINA"
+},
+{
+id: 3,
+name: "Pré-treino Insano",
+price: 119.90,
+rating: 4.8,
+reviews: 276,
+category: "energia",
+tag: "Foco Extremo",
+weight: "300g",
+shortDesc: "Energia brutal, vasodilatação (pump) e foco mental laser do início ao fim.",
+description: "Desenvolvido para treinos hardcore. Combina Cafeína Anidra, Beta-Alanina e Arginina em doses clínicas para eliminar a fadiga e elevar sua intensidade.",
+benefits: [
+"Energia explosiva e foco mental intenso",
+"Vasodilatação extrema e efeito pump",
+"Reduz a fadiga muscular com Beta-Alanina",
+"Zero açúcar"
+],
+howToUse: "Diluir 1 scoop (10g) em 200ml de água gelada e tomar de 20 a 30 minutos antes do treino.",
+svgLabel: "INSANO"
+},
+{
+id: 4,
+name: "Hipercalórico 3kg",
+price: 179.90,
+rating: 4.9,
+reviews: 194,
+category: "massa",
+tag: "Ganho de Peso",
+weight: "3kg",
+shortDesc: "Combinação estratégica de proteínas e carboidratos complexos para bulking pesado.",
+description: "Feito para atletas com metabolismo acelerado que precisam de superávit calórico de qualidade para ganhar peso e volume muscular.",
+benefits: [
+"Alto aporte calórico e proteico por dose",
+"Blend de carboidratos de rápida e lenta absorção",
+"Enriquecido com vitaminas e minerais",
+"Embalagem econômica de 3kg"
+],
+howToUse: "Bater 4 dosadores (150g) em 300ml de água ou leite integral 1 vez ao dia.",
+svgLabel: "MASS 3KG"
+},
+{
+id: 5,
+name: "BCAA + Glutamina",
+price: 89.90,
+rating: 4.8,
+reviews: 165,
+category: "saude",
+tag: "Anti-Catabólico",
+weight: "250g",
+shortDesc: "Recuperação acelerada, proteção muscular e fortalecimento da imunidade.",
+description: "Sinergia perfeita entre aminoácidos essenciais e L-Glutamina pura. Evita o catabolismo em treinos intensos e melhora a imunidade.",
+benefits: [
+"Reduz a dor muscular tardia pós-treino",
+"Preserva a massa magra em dietas de definição",
+"Fortalece o sistema imunológico e intestinal",
+"Excelente solubilidade"
+],
+howToUse: "Misturar 1 scoop (7g) em 200ml de água gelada durante ou após o treino.",
+svgLabel: "BCAA+GLUT"
+},
+{
+id: 6,
+name: "Vitamina D3 + Zinco",
+price: 49.90,
+rating: 4.9,
+reviews: 210,
+category: "saude",
+tag: "Saúde & Hormônios",
+weight: "60 cáps",
+shortDesc: "Suporte imunológico, saúde óssea e otimização natural da testosterona.",
+description: "Micronutrientes fundamentais para praticantes de musculação. Atua na função muscular, imunidade e equilíbrio hormonal.",
+benefits: [
+"Auxilia na manutenção dos níveis naturais de testosterona",
+"Fortalece ossos, articulações e sistema imune",
+"Melhora a disposição diária e o sono",
+"Cápsulas de alta biodisponibilidade"
+],
+howToUse: "Ingerir 1 cápsula ao dia junto com uma das principais refeições.",
+svgLabel: "D3 + ZINCO"
+}
+];
+​const THEME_PRESETS = {
+crimson: {
+bgMain: '#0d0d0f',
+bgCard: '#161619',
+primary: '#dc2626',
+bright: '#ef4444',
+dark: '#991b1b',
+glow: 'rgba(220, 38, 38, 0.35)'
+},
+gold: {
+bgMain: '#0c0a09',
+bgCard: '#171412',
+primary: '#d97706',
+bright: '#f59e0b',
+dark: '#92400e',
+glow: 'rgba(217, 119, 6, 0.35)'
+},
+cobalt: {
+bgMain: '#090d16',
+bgCard: '#111827',
+primary: '#2563eb',
+bright: '#3b82f6',
+dark: '#1e40af',
+glow: 'rgba(37, 99, 235, 0.35)'
+},
+bordeaux: {
+bgMain: '#120b0d',
+bgCard: '#1c1114',
+primary: '#be123c',
+bright: '#e11d48',
+dark: '#881337',
+glow: 'rgba(190, 18, 60, 0.35)'
+}
+};
+​// ESTADO GLOBAL & PERSISTÊNCIA
+let PRODUCTS = JSON.parse(localStorage.getItem('darlin_products')) || DEFAULT_PRODUCTS;
+let globalSettings = JSON.parse(localStorage.getItem('darlin_settings')) || {
+storeName: "Darlin Suplementos",
+couponCode: "DARLIN20",
+couponDiscount: 20,
+theme: "crimson",
+aiProvider: "offline",
+aiApiKey: ""
+};
+​let cart = [];
+let activeCategory = 'todos';
+let searchQuery = '';
+let discountApplied = false;
+let currentModalQty = 1;
+let isAdminAuthenticated = false;
+​// MEMÓRIA DA CONVERSA DA IA FIT (SEM LOOPS)
+let aiMemory = {
+weight: null,
+goal: null,
+routine: null,
+lastTopic: null,
+lastRecommendedProductId: null,
+usedReplies: new Set(),
+chatHistory: []
+};
+​function formatBRL(value) {
+return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+​function showToast(msg) {
+const box = document.getElementById('toastBox');
+document.getElementById('toastMessage').textContent = msg;
+box.classList.remove('hidden');
+lucide.createIcons();
+clearTimeout(window.toastTimer);
+window.toastTimer = setTimeout(() => box.classList.add('hidden'), 3200);
+}
+​// APLICAR TEMA E CONFIGURAÇÕES GLOBAIS
+function applyThemePreset(presetKey, silent = false) {
+const theme = THEME_PRESETS[presetKey] || THEME_PRESETS.crimson;
+document.documentElement.style.setProperty('--bg-main', theme.bgMain);
+document.documentElement.style.setProperty('--bg-card', theme.bgCard);
+document.documentElement.style.setProperty('--brand-primary', theme.primary);
+document.documentElement.style.setProperty('--brand-bright', theme.bright);
+document.documentElement.style.setProperty('--brand-dark', theme.dark);
+document.documentElement.style.setProperty('--brand-glow', theme.glow);
+globalSettings.theme = presetKey;
+localStorage.setItem('darlin_settings', JSON.stringify(globalSettings));
+if (!silent) showToast('Tema da academia atualizado!');
+}
+​function syncStoreBranding() {
+const parts = globalSettings.storeName.trim().split(' ');
+const first = parts[0] || 'DARLIN';
+const rest = parts.slice(1).join(' ') || 'SUPLEMENTOS';
+​document.title = ${globalSettings.storeName.toUpperCase()} | Alta Performance & Hipertrofia;
+document.getElementById('storeLogoTitle').innerHTML = ${first.toUpperCase()} <span class="text-brandRed">${rest.toUpperCase()}</span>;
+document.getElementById('footerStoreName').innerHTML = ${first.toUpperCase()} <span class="text-brandRed">${rest.toUpperCase()}</span>;
+document.getElementById('footerCopyName').textContent = globalSettings.storeName.toUpperCase();
+document.getElementById('heroBrandName').textContent = globalSettings.storeName;
+document.getElementById('catalogBrandAccent').textContent = first.toUpperCase();
+​document.getElementById('topBannerCoupon').textContent = globalSettings.couponCode;
+document.getElementById('topBannerDiscount').textContent = globalSettings.couponDiscount;
+document.getElementById('heroCouponDisplay').textContent = globalSettings.couponCode;
+document.getElementById('cartCouponLabel').textContent = Cupom de Desconto (Teste: ${globalSettings.couponCode});
+document.getElementById('discountPctDisplay').textContent = globalSettings.couponDiscount;
+​const whey = PRODUCTS.find(p => p.id === 1) || PRODUCTS[0];
+if (whey) {
+document.getElementById('heroHighlightPrice').textContent = formatBRL(whey.price);
+}
+}
+​// GERADOR DE ARTE VETORIAL PARA CADA SUPLEMENTO
+function getProductSVG(product) {
+return <svg viewBox="0 0 180 200" class="w-36 h-40 mx-auto drop-shadow-[0_10px_18px_rgba(0,0,0,0.65)] group-hover:scale-105 transition-transform duration-300"> <rect x="42" y="14" width="96" height="20" rx="5" fill="#222227" stroke="var(--brand-primary)" stroke-width="1.5"/> <rect x="32" y="36" width="116" height="148" rx="14" fill="#141418" stroke="#2e2e34" stroke-width="2"/> <rect x="34" y="60" width="112" height="96" fill="#09090b"/> <polygon points="34,60 146,60 146,74 34,84" fill="var(--brand-primary)"/> <text x="90" y="106" text-anchor="middle" fill="#ffffff" font-family="Oswald, sans-serif" font-weight="bold" font-size="16">${product.svgLabel || 'DARLIN'}</text> <text x="90" y="124" text-anchor="middle" fill="var(--brand-bright)" font-family="Inter, sans-serif" font-weight="bold" font-size="9">DARLIN PRO SERIES</text> <rect x="52" y="133" width="76" height="16" rx="3" fill="#16161a" stroke="var(--brand-primary)" stroke-width="0.8"/> <text x="90" y="144" text-anchor="middle" fill="#d4d4d8" font-family="Inter, sans-serif" font-weight="600" font-size="8">${product.weight}</text> </svg>;
+}
+​// RENDERIZAÇÃO DO CATÁLOGO
+function renderProducts() {
+const grid = document.getElementById('productsGrid');
+const emptyState = document.getElementById('emptySearch');
+​const filtered = PRODUCTS.filter(p => {
+const matchCat = activeCategory === 'todos' || p.category === activeCategory;
+const matchSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+p.shortDesc.toLowerCase().includes(searchQuery.toLowerCase());
+return matchCat && matchSearch;
+});
+​if (filtered.length === 0) {
+grid.innerHTML = '';
+emptyState.classList.remove('hidden');
+lucide.createIcons();
+return;
+}
+​emptyState.classList.add('hidden');
+grid.innerHTML = filtered.map(product => `
+<article class="bg-cardBg border border-neutral-800 hover:border-brandRed/70 rounded-3xl p-5 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 shadow-lg">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="bg-brandRed/15 text-brandRedBright text-[11px] font-bold uppercase px-3 py-1 rounded-full tracking-wider">
+${product.tag}
+</span>
+<div class="flex items-center gap-1 text-xs font-bold text-amber-400">
+<span>★ {Number(product.rating).toFixed(1)}</span>
+<span class="text-neutral-500 font-normal">({product.reviews || 120})</span>
+</div>
+</div>
+​<div onclick="openProductModal(${product.id})" class="cursor-pointer bg-gradient-to-b from-neutral-900/90 to-darkBg rounded-2xl py-5 px-3 mb-4 border border-neutral-800/60 relative overflow-hidden">
+${getProductSVG(product)}
+<span class="absolute bottom-2 right-2 bg-black/75 text-neutral-300 text-[10px] px-2.5 py-1 rounded-lg flex items-center gap-1 opacity-85 group-hover:text-brandRedBright">
+<i data-lucide="eye" class="w-3 h-3"></i> Detalhes
+</span>
+</div>
+​<h3 onclick="openProductModal(${product.id})" class="cursor-pointer text-2xl font-bold text-white uppercase group-hover:text-brandRedBright transition-colors">
+${product.name}
+</h3>
+<p class="text-neutral-400 text-xs sm:text-sm mt-1.5 line-clamp-2 leading-relaxed">
+${product.shortDesc}
+</p>
+</div>
+​<div class="pt-5 mt-4 border-t border-neutral-800/80 space-y-3">
+<div class="flex items-baseline justify-between">
+<div>
+<span class="text-[11px] text-neutral-500 block">À vista no PIX ou Cartão</span>
+<span class="font-sport text-3xl font-bold text-brandRedBright">${formatBRL(product.price)}</span>
+</div>
+<span class="text-xs text-neutral-400 font-medium">3x de ${formatBRL(product.price / 3)}</span>
+</div>
+​<div class="grid grid-cols-5 gap-2">
+<button onclick="openProductModal(${product.id})" class="col-span-2 bg-neutral-800 hover:bg-neutral-700 text-white font-semibold py-3.5 rounded-xl text-xs uppercase transition-all">
+Detalhes
+</button>
+<button onclick="addToCart(${product.id}, 1)" class="col-span-3 bg-brandRed hover:bg-brandRedBright text-white font-sport text-lg font-bold uppercase py-3 rounded-xl shadow-red-sm hover:shadow-red-glow transition-all flex items-center justify-center gap-1.5 active:scale-95">
+<i data-lucide="shopping-cart" class="w-4 h-4"></i> Comprar
+</button>
+</div>
+</div>
+</article>
+`).join('');
+​lucide.createIcons();
+}
+​function setCategory(cat, btnElement) {
+activeCategory = cat;
+document.querySelectorAll('.filter-btn').forEach(btn => {
+btn.classList.remove('active', 'bg-brandRed', 'text-white', 'font-bold');
+btn.classList.add('bg-cardBg', 'text-neutral-300', 'border', 'border-neutral-800');
+});
+btnElement.classList.add('active', 'bg-brandRed', 'text-white', 'font-bold');
+btnElement.classList.remove('bg-cardBg', 'text-neutral-300', 'border', 'border-neutral-800');
+renderProducts();
+}
+​function filterProducts() {
+searchQuery = document.getElementById('searchInput').value;
+document.getElementById('searchInputMobile').value = searchQuery;
+renderProducts();
+}
+​function syncSearch(val) {
+searchQuery = val;
+document.getElementById('searchInput').value = val;
+renderProducts();
+}
+​function resetFilters() {
+activeCategory = 'todos';
+searchQuery = '';
+document.getElementById('searchInput').value = '';
+document.getElementById('searchInputMobile').value = '';
+const firstBtn = document.querySelector('.filter-btn');
+if (firstBtn) setCategory('todos', firstBtn);
+}
+​// MODAL DE DETALHES DO PRODUTO
+function openProductModal(productId) {
+const product = PRODUCTS.find(p => p.id === productId);
+if (!product) return;
+​currentModalQty = 1;
+const modal = document.getElementById('productModal');
+const content = document.getElementById('productModalContent');
+​const benefitsList = (product.benefits && product.benefits.length > 0)
+? product.benefits
+: ["Alta pureza e absorção otimizada", "Resultados comprovados na performance"];
+​content.innerHTML = `
+<div class="md:col-span-5 bg-darkBg border border-neutral-800 rounded-2xl p-6 flex flex-col items-center justify-center text-center">
+<span class="bg-brandRed/15 text-brandRedBright text-xs font-bold uppercase px-3 py-1 rounded-full mb-4">${product.tag} • ${product.weight}</span>
+{getProductSVG(product)}
+<div class="mt-4 flex items-center gap-1 text-amber-400 text-sm font-bold">
+★★★★★ <span class="text-neutral-400 font-normal">({product.reviews || 120} avaliações)</span>
+</div>
+</div>
+​<div class="md:col-span-7 flex flex-col justify-between space-y-5">
+<div>
+<h2 class="text-3xl sm:text-4xl font-bold uppercase text-white">{product.name}</h2>
+<div class="flex items-baseline gap-3 mt-2">
+<span class="font-sport text-4xl font-bold text-brandRedBright">{formatBRL(product.price)}</span>
+<span class="text-xs text-neutral-400">ou 3x de ${formatBRL(product.price / 3)} sem juros</span>
+</div>
+​<p class="text-neutral-300 text-sm mt-4 leading-relaxed">${product.description}</p>
+​<div class="mt-5">
+<h4 class="font-sport text-base uppercase text-brandRedBright tracking-wider mb-2">Principais Benefícios:</h4>
+<ul class="space-y-1.5 text-xs sm:text-sm text-neutral-300">
+${benefitsList.map(b => <li class="flex items-start gap-2"> <i data-lucide="check-circle-2" class="w-4 h-4 text-brandRedBright shrink-0 mt-0.5"></i> <span>${b}</span> </li>).join('')}
+</ul>
+</div>
+​<div class="mt-5 bg-darkBg border border-neutral-800 rounded-xl p-3.5">
+<h4 class="font-sport text-sm uppercase text-white flex items-center gap-1.5 mb-1">
+<i data-lucide="info" class="w-4 h-4 text-brandRedBright"></i> Como Tomar:
+</h4>
+<p class="text-xs text-neutral-400 leading-relaxed">${product.howToUse}</p>
+</div>
+</div>
+​<div class="pt-4 border-t border-neutral-800 flex flex-col sm:flex-row gap-3">
+<div class="flex items-center justify-between bg-darkBg border border-neutral-700 rounded-xl px-4 py-2 sm:w-36">
+<button onclick="changeModalQty(-1)" class="text-neutral-400 hover:text-white font-bold text-xl px-2">-</button>
+<span id="modalQtyDisplay" class="font-bold text-white text-lg">1</span>
+<button onclick="changeModalQty(1)" class="text-brandRedBright font-bold text-xl px-2">+</button>
+</div>
+​<button onclick="addToCart(${product.id}, currentModalQty); closeProductModal();" class="flex-1 bg-brandRed hover:bg-brandRedBright text-white font-sport text-xl font-bold uppercase py-3.5 px-6 rounded-xl shadow-red-glow transition-all flex items-center justify-center gap-2 active:scale-95">
+<i data-lucide="shopping-cart" class="w-5 h-5"></i> ADICIONAR AO CARRINHO
+</button>
+</div>
+</div>
+`;
+​modal.classList.remove('hidden');
+lucide.createIcons();
+}
+​function changeModalQty(delta) {
+currentModalQty = Math.max(1, currentModalQty + delta);
+document.getElementById('modalQtyDisplay').textContent = currentModalQty;
+}
+​function closeProductModal() {
+document.getElementById('productModal').classList.add('hidden');
+}
+​// CARRINHO DE COMPRAS
+function toggleCart(forceState) {
+const drawer = document.getElementById('cartDrawer');
+if (typeof forceState === 'boolean') {
+drawer.classList.toggle('hidden', !forceState);
+} else {
+drawer.classList.toggle('hidden');
+}
+renderCart();
+}
+​function addToCart(productId, qty = 1) {
+const product = PRODUCTS.find(p => p.id === productId);
+if (!product) return;
+​const existing = cart.find(item => item.id === productId);
+if (existing) {
+existing.qty += qty;
+} else {
+cart.push({ ...product, qty });
+}
+​updateCartBadge();
+renderCart();
+showToast(${product.name} adicionado ao carrinho!);
+}
+​function updateCartQty(productId, delta) {
+const index = cart.findIndex(item => item.id === productId);
+if (index === -1) return;
+​cart[index].qty += delta;
+if (cart[index].qty <= 0) {
+cart.splice(index, 1);
+}
+updateCartBadge();
+renderCart();
+}
+​function updateCartBadge() {
+const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
+document.getElementById('cartBadge').textContent = totalItems;
+}
+​function calculateTotals() {
+const subtotal = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+const discountRate = (globalSettings.couponDiscount || 20) / 100;
+const discount = discountApplied ? subtotal * discountRate : 0;
+const total = subtotal - discount;
+return { subtotal, discount, total };
+}
+​function renderCart() {
+const list = document.getElementById('cartItemsList');
+const footer = document.getElementById('cartFooter');
+​if (cart.length === 0) {
+list.innerHTML = <div class="text-center py-16 space-y-3"> <i data-lucide="shopping-bag" class="w-14 h-14 text-neutral-600 mx-auto"></i> <h4 class="font-sport text-xl text-white uppercase">Seu carrinho está vazio</h4> <p class="text-xs text-neutral-400 max-w-xs mx-auto">Adicione suplementos do catálogo ou peça recomendação para a IA FIT.</p> <button onclick="toggleCart(false)" class="mt-2 bg-brandRed text-white font-bold px-5 py-2.5 rounded-xl text-xs uppercase">Explorar Catálogo</button> </div>;
+footer.classList.add('hidden');
+lucide.createIcons();
+return;
+}
+​footer.classList.remove('hidden');
+list.innerHTML = cart.map(item => <div class="bg-cardBg border border-neutral-800 rounded-2xl p-3.5 flex items-center justify-between gap-3"> <div class="flex-1 min-w-0"> <h4 class="font-bold text-white text-sm truncate">${item.name}</h4> <span class="text-xs text-brandRedBright font-bold">${formatBRL(item.price)} un.</span> </div> <div class="flex items-center gap-2 bg-darkBg border border-neutral-700 rounded-xl px-2.5 py-1.5"> <button onclick="updateCartQty(${item.id}, -1)" class="text-neutral-400 hover:text-white font-bold px-1">-</button> <span class="text-xs font-bold text-white w-4 text-center">${item.qty}</span> <button onclick="updateCartQty(${item.id}, 1)" class="text-brandRedBright font-bold px-1">+</button> </div> </div>).join('');
+​const { subtotal, discount, total } = calculateTotals();
+document.getElementById('cartSubtotal').textContent = formatBRL(subtotal);
+document.getElementById('cartTotal').textContent = formatBRL(total);
+​if (discountApplied) {
+document.getElementById('discountRow').classList.remove('hidden');
+document.getElementById('cartDiscount').textContent = - ${formatBRL(discount)};
+} else {
+document.getElementById('discountRow').classList.add('hidden');
+}
+​lucide.createIcons();
+}
+​function copyCoupon() {
+const code = globalSettings.couponCode;
+const temp = document.createElement('textarea');
+temp.value = code;
+document.body.appendChild(temp);
+temp.select();
+document.execCommand('copy');
+document.body.removeChild(temp);
+​discountApplied = true;
+document.getElementById('couponInput').value = code;
+renderCart();
+showToast(Cupom ${code} copiado e ativado (${globalSettings.couponDiscount}% OFF)!);
+}
+​function applyCouponFromInput() {
+const code = document.getElementById('couponInput').value.trim().toUpperCase();
+const feedback = document.getElementById('couponFeedback');
+feedback.classList.remove('hidden');
+​if (code === globalSettings.couponCode) {
+discountApplied = true;
+feedback.textContent = ✓ Cupom ${code} aplicado! ${globalSettings.couponDiscount}% de desconto ativo.;
+feedback.className = 'text-xs mt-1.5 text-brandRedBright font-semibold';
+renderCart();
+} else {
+discountApplied = false;
+feedback.textContent = ✕ Cupom inválido. Use ${globalSettings.couponCode} para ganhar ${globalSettings.couponDiscount}% OFF.;
+feedback.className = 'text-xs mt-1.5 text-red-400';
+renderCart();
+}
+}
+​// CHECKOUT
+function openCheckout() {
+if (cart.length === 0) return;
+toggleCart(false);
+const { total } = calculateTotals();
+document.getElementById('checkoutTotalDisplay').textContent = formatBRL(total);
+document.getElementById('checkoutBody').classList.remove('hidden');
+document.getElementById('orderSuccessScreen').classList.add('hidden');
+document.getElementById('checkoutModal').classList.remove('hidden');
+lucide.createIcons();
+}
+​function closeCheckout() {
+document.getElementById('checkoutModal').classList.add('hidden');
+}
+​function selectPaymentMethod(method) {
+['pix', 'card', 'boleto'].forEach(m => {
+const tab = document.getElementById(tab-${m});
+const panel = document.getElementById(panel-${m});
+if (m === method) {
+tab.className = 'pay-tab bg-brandRed text-white font-bold py-3 px-2 rounded-xl text-xs sm:text-sm uppercase flex items-center justify-center gap-1.5 transition-all';
+panel.classList.remove('hidden');
+} else {
+tab.className = 'pay-tab bg-darkBg text-neutral-300 border border-neutral-700 font-bold py-3 px-2 rounded-xl text-xs sm:text-sm uppercase flex items-center justify-center gap-1.5 transition-all';
+panel.classList.add('hidden');
+}
+});
+}
+​function confirmOrder() {
+const name = document.getElementById('custName').value.trim();
+const address = document.getElementById('custAddress').value.trim();
+if (!name || !address) {
+showToast('Preencha seu nome e endereço para entrega!');
+return;
+}
+const randomOrder = Math.floor(1000 + Math.random() * 9000);
+document.getElementById('orderNumberDisplay').textContent = #DAR-${randomOrder};
+document.getElementById('checkoutBody').classList.add('hidden');
+document.getElementById('orderSuccessScreen').classList.remove('hidden');
+lucide.createIcons();
+}
+​function finishAndResetOrder() {
+cart = [];
+discountApplied = false;
+updateCartBadge();
+closeCheckout();
+showToast('Obrigado por comprar na ' + globalSettings.storeName + '!');
+}
+​// ==========================================
+// PAINEL ADMINISTRATIVO (OWNER)
+// ==========================================
+function openAdminGate() {
+if (isAdminAuthenticated) {
+openAdminModal();
+} else {
+document.getElementById('adminLoginModal').classList.remove('hidden');
+lucide.createIcons();
+}
+}
+​function closeAdminLogin() {
+document.getElementById('adminLoginModal').classList.add('hidden');
+}
+​function handleAdminLogin(e) {
+e.preventDefault();
+const u = document.getElementById('adminUser').value.trim();
+const p = document.getElementById('adminPass').value.trim();
+if (u === 'admin' && p === 'darlin123') {
+isAdminAuthenticated = true;
+closeAdminLogin();
+openAdminModal();
+showToast('Bem-vindo ao Painel Owner!');
+} else {
+showToast('Usuário ou senha incorretos!');
+}
+}
+​function logoutAdmin() {
+isAdminAuthenticated = false;
+closeAdminModal();
+showToast('Sessão administrativa encerrada.');
+}
+​function openAdminModal() {
+renderAdminProductsTable();
+document.getElementById('settingStoreName').value = globalSettings.storeName;
+document.getElementById('settingCouponCode').value = globalSettings.couponCode;
+document.getElementById('settingCouponDiscount').value = globalSettings.couponDiscount;
+document.getElementById('settingAiProvider').value = globalSettings.aiProvider || 'offline';
+document.getElementById('settingAiApiKey').value = globalSettings.aiApiKey || '';
+document.getElementById('adminModal').classList.remove('hidden');
+lucide.createIcons();
+}
+​function closeAdminModal() {
+document.getElementById('adminModal').classList.add('hidden');
+}
+​function switchAdminTab(tab) {
+['products', 'themes', 'settings'].forEach(t => {
+const tabBtn = document.getElementById(adminTab${t.charAt(0).toUpperCase() + t.slice(1)});
+const sec = document.getElementById(adminSection${t.charAt(0).toUpperCase() + t.slice(1)});
+if (t === tab) {
+tabBtn.className = 'admin-tab py-3 px-5 border-b-2 border-brandRed text-brandRedBright font-bold text-sm uppercase transition-all shrink-0';
+sec.classList.remove('hidden');
+} else {
+tabBtn.className = 'admin-tab py-3 px-5 border-b-2 border-transparent text-neutral-400 hover:text-white font-semibold text-sm uppercase transition-all shrink-0';
+sec.classList.add('hidden');
+}
+});
+}
+​function renderAdminProductsTable() {
+const tbody = document.getElementById('adminProductsTableBody');
+tbody.innerHTML = PRODUCTS.map(p => <tr class="border-b border-neutral-800/80 hover:bg-neutral-900/40"> <td class="p-4"> <div class="font-bold text-white">${p.name}</div> <div class="text-xs text-neutral-500">${p.weight} • ${p.tag}</div> </td> <td class="p-4 uppercase text-xs text-neutral-300">${p.category}</td> <td class="p-4 font-sport text-lg text-brandRedBright font-bold">${formatBRL(p.price)}</td> <td class="p-4 text-amber-400 text-xs font-bold">★ ${Number(p.rating).toFixed(1)}</td> <td class="p-4 text-right space-x-2"> <button onclick="openProductEditor(${p.id})" class="bg-neutral-800 hover:bg-brandRed text-white px-3 py-1.5 rounded-lg text-xs font-bold uppercase transition-colors">Editar</button> <button onclick="deleteProductFromAdmin(${p.id})" class="bg-red-950/60 hover:bg-red-700 text-red-300 hover:text-white px-3 py-1.5 rounded-lg text-xs font-bold uppercase transition-colors">Excluir</button> </td> </tr>).join('');
+}
+​function openProductEditor(productId = null) {
+const modal = document.getElementById('productEditorModal');
+if (productId) {
+const p = PRODUCTS.find(item => item.id === productId);
+document.getElementById('editorModalTitle').textContent = 'Editar Produto';
+document.getElementById('editProductId').value = p.id;
+document.getElementById('editName').value = p.name;
+document.getElementById('editPrice').value = p.price;
+document.getElementById('editCategory').value = p.category;
+document.getElementById('editWeight').value = p.weight;
+document.getElementById('editTag').value = p.tag;
+document.getElementById('editRating').value = p.rating;
+document.getElementById('editShortDesc').value = p.shortDesc;
+document.getElementById('editDescription').value = p.description;
+document.getElementById('editHowToUse').value = p.howToUse;
+} else {
+document.getElementById('editorModalTitle').textContent = 'Novo Suplemento';
+document.getElementById('editProductId').value = '';
+document.getElementById('editName').value = '';
+document.getElementById('editPrice').value = '';
+document.getElementById('editCategory').value = 'massa';
+document.getElementById('editWeight').value = '300g';
+document.getElementById('editTag').value = 'Lançamento';
+document.getElementById('editRating').value = '5.0';
+document.getElementById('editShortDesc').value = '';
+document.getElementById('editDescription').value = '';
+document.getElementById('editHowToUse').value = '';
+}
+modal.classList.remove('hidden');
+}
+​function closeProductEditor() {
+document.getElementById('productEditorModal').classList.add('hidden');
+}
+​function saveProductFromAdmin() {
+const idVal = document.getElementById('editProductId').value;
+const name = document.getElementById('editName').value.trim();
+const price = parseFloat(document.getElementById('editPrice').value);
+const category = document.getElementById('editCategory').value;
+const weight = document.getElementById('editWeight').value.trim() || '300g';
+const tag = document.getElementById('editTag').value.trim() || 'Pro Series';
+const rating = parseFloat(document.getElementById('editRating').value) || 5.0;
+const shortDesc = document.getElementById('editShortDesc').value.trim();
+const description = document.getElementById('editDescription').value.trim() || shortDesc;
+const howToUse = document.getElementById('editHowToUse').value.trim() || 'Consumir conforme orientação profissional.';
+​if (!name || isNaN(price)) {
+showToast('Informe pelo menos o nome e o preço válido!');
+return;
+}
+​if (idVal) {
+const idx = PRODUCTS.findIndex(p => p.id === Number(idVal));
+if (idx !== -1) {
+PRODUCTS[idx] = {
+...PRODUCTS[idx],
+name, price, category, weight, tag, rating, shortDesc, description, howToUse,
+svgLabel: name.substring(0, 9).toUpperCase()
+};
+}
+} else {
+const newId = PRODUCTS.length ? Math.max(...PRODUCTS.map(p => p.id)) + 1 : 1;
+PRODUCTS.push({
+id: newId,
+name, price, rating, reviews: 1, category, tag, weight,
+shortDesc, description,
+benefits: ["Alta pureza laboratorial", "Resultados comprovados na performance"],
+howToUse,
+svgLabel: name.substring(0, 9).toUpperCase()
+});
+}
+​localStorage.setItem('darlin_products', JSON.stringify(PRODUCTS));
+renderProducts();
+renderAdminProductsTable();
+syncStoreBranding();
+closeProductEditor();
+showToast('Produto salvo com sucesso!');
+}
+​function deleteProductFromAdmin(productId) {
+PRODUCTS = PRODUCTS.filter(p => p.id !== productId);
+localStorage.setItem('darlin_products', JSON.stringify(PRODUCTS));
+renderProducts();
+renderAdminProductsTable();
+showToast('Produto removido do catálogo.');
+}
+​function saveGlobalSettings() {
+const storeName = document.getElementById('settingStoreName').value.trim();
+const couponCode = document.getElementById('settingCouponCode').value.trim().toUpperCase();
+const couponDiscount = parseFloat(document.getElementById('settingCouponDiscount').value);
+const aiProvider = document.getElementById('settingAiProvider').value;
+const aiApiKey = document.getElementById('settingAiApiKey').value.trim();
+​if (!storeName || !couponCode || isNaN(couponDiscount)) {
+showToast('Preencha os dados da loja corretamente.');
+return;
+}
+​globalSettings.storeName = storeName;
+globalSettings.couponCode = couponCode;
+globalSettings.couponDiscount = couponDiscount;
+globalSettings.aiProvider = aiProvider;
+globalSettings.aiApiKey = aiApiKey;
+​localStorage.setItem('darlin_settings', JSON.stringify(globalSettings));
+syncStoreBranding();
+showToast('Configurações salvas e aplicadas!');
+}
+​function resetAllStoreData() {
+localStorage.removeItem('darlin_products');
+localStorage.removeItem('darlin_settings');
+location.reload();
+}
+​// ==========================================
+// ASSISTENTE DE IA INTEGRADO ("IA FIT") - SEM LOOPS E COM COMPREENSÃO REAL
+// ==========================================
+function toggleChat(forceState) {
+const chatWin = document.getElementById('aiChatWindow');
+if (typeof forceState === 'boolean') {
+chatWin.classList.toggle('hidden', !forceState);
+} else {
+chatWin.classList.toggle('hidden');
+}
+lucide.createIcons();
+}
+​function resetChatSession() {
+aiMemory = {
+weight: null,
+goal: null,
+routine: null,
+lastTopic: null,
+lastRecommendedProductId: null,
+usedReplies: new Set(),
+chatHistory: []
+};
+document.getElementById('chatMessages').innerHTML = '';
+initChat();
+showToast('Conversa reiniciada!');
+}
+​function appendMessage(sender, htmlContent, id = null) {
+const container = document.getElementById('chatMessages');
+const isBot = sender === 'bot';
+​const msgDiv = document.createElement('div');
+if (id) msgDiv.id = id;
+msgDiv.className = flex ${isBot ? 'justify-start' : 'justify-end'};
+​msgDiv.innerHTML = <div class="${isBot  ? 'bg-cardBg border border-neutral-800 text-neutral-200 rounded-2xl rounded-tl-sm'  : 'bg-brandRed text-white font-medium rounded-2xl rounded-tr-sm'} p-3.5 max-w-[88%] shadow-md leading-relaxed"> ${htmlContent} </div>;
+container.appendChild(msgDiv);
+container.scrollTop = container.scrollHeight;
+lucide.createIcons();
+return msgDiv;
+}
+​function buildProductRecCard(productId, reasonText) {
+const p = PRODUCTS.find(item => item.id === productId);
+if (!p) return '';
+aiMemory.lastRecommendedProductId = p.id;
+return <div class="mt-2.5 bg-darkBg border border-brandRed/50 rounded-xl p-3 space-y-2"> <div class="flex justify-between items-start gap-2"> <strong class="text-white text-xs uppercase font-bold">${p.name}</strong> <span class="text-brandRedBright font-sport font-bold text-base shrink-0">${formatBRL(p.price)}</span> </div> <p class="text-xs text-neutral-400">${reasonText}</p> <button onclick="openProductModal(${p.id})" class="w-full bg-brandRed hover:bg-brandRedBright text-white font-bold text-xs uppercase py-2 px-3 rounded-lg transition-all flex items-center justify-center gap-1.5"> Ver Produto <i data-lucide="external-link" class="w-3.5 h-3.5"></i> </button> </div>;
+}
+​function initChat() {
+appendMessage('bot', <p>Fala, atleta! 💪 Aqui é a <strong>IA FIT</strong>, seu nutricionista esportivo e personal trainer da <strong>${globalSettings.storeName}</strong>!</p> <p class="mt-1.5">Pode me fazer <strong>qualquer pergunta real</strong> sobre treino, dieta, cálculos de proteína e água, emagrecimento, hipertrofia ou suplementos!</p>);
+}
+​function sendQuickPrompt(text) {
+document.getElementById('chatInput').value = text;
+handleChatSubmit(new Event('submit'));
+}
+​async function handleChatSubmit(e) {
+e.preventDefault();
+const input = document.getElementById('chatInput');
+const text = input.value.trim();
+if (!text) return;
+​appendMessage('user', text);
+input.value = '';
+​const typingId = 'typing-' + Date.now();
+appendMessage('bot', <span class="text-xs text-neutral-400 italic flex items-center gap-1.5"><span class="w-2 h-2 bg-brandRed rounded-full animate-ping"></span> Analisando...</span>, typingId);
+​if (globalSettings.aiApiKey && globalSettings.aiProvider !== 'offline') {
+await fetchExternalAI(text, typingId);
+} else {
+setTimeout(() => {
+const typingEl = document.getElementById(typingId);
+if (typingEl) typingEl.remove();
+generateSemanticResponse(text);
+}, 400);
+}
+}
+​// INTEGRAÇÃO COM API REAL (GEMINI OU OPENAI) SE CONFIGURADA NO ADMIN
+async function fetchExternalAI(userText, typingId) {
+const catalogContext = PRODUCTS.map(p => [ID:${p.id}] ${p.name} - ${formatBRL(p.price)} (${p.shortDesc})).join('\n');
+aiMemory.chatHistory.push({ role: "user", content: userText });
+​const systemPrompt = Você é a IA FIT, nutricionista esportivo e personal trainer da loja ${globalSettings.storeName}. Responda perguntas reais de treino, dieta, saúde e suplementação de forma humana, direta, técnica e sem jamais repetir respostas anteriores. NUNCA invente preços ou produtos fora deste catálogo:\n${catalogContext}\nSe recomendar um produto da loja, inclua a tag exata [PRODUTO:ID] para renderizar o card de compra.;
+​try {
+let reply = '';
+if (globalSettings.aiProvider === 'gemini') {
+const url = https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${globalSettings.aiApiKey};
+const res = await fetch(url, {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify({
+system_instruction: { parts: [{ text: systemPrompt }] },
+contents: aiMemory.chatHistory.slice(-8).map(m => ({
+role: m.role === 'assistant' ? 'model' : 'user',
+parts: [{ text: m.content }]
+}))
+})
+});
+const data = await res.json();
+reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
+} else {
+const res = await fetch('https://api.openai.com/v1/chat/completions', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+'Authorization': Bearer ${globalSettings.aiApiKey}
+},
+body: JSON.stringify({
+model: 'gpt-4o-mini',
+messages: [{ role: 'system', content: systemPrompt }, ...aiMemory.chatHistory.slice(-8)]
+})
+});
+const data = await res.json();
+reply = data?.choices?.[0]?.message?.content || '';
+}
+​const typingEl = document.getElementById(typingId);
+if (typingEl) typingEl.remove();
+​if (reply) {
+aiMemory.chatHistory.push({ role: "assistant", content: reply });
+let extraCards = '';
+reply = reply.replace(/[PRODUTO:(\d+)]/g, (_, id) => {
+extraCards += buildProductRecCard(Number(id), 'Recomendação personalizada para o seu objetivo.');
+return '';
+});
+appendMessage('bot', <p>${reply.replace(/\n/g, '<br>')}</p>${extraCards});
+return;
+}
+} catch (err) {
+const typingEl = document.getElementById(typingId);
+if (typingEl) typingEl.remove();
+}
+​// Fallback automático caso a chave dê erro
+generateSemanticResponse(userText);
+}
+​// MOTOR SEMÂNTICO OFFLINE COMPLETO (ZERO LOOPS, HISTÓRICO REAL E CÁLCULOS)
+function generateSemanticResponse(rawText) {
+const msg = rawText.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+​// 1. Extração contínua de contexto do usuário (Peso, Objetivo, Rotina)
+const weightMatch = msg.match(/\b(3\d|4\d|5\d|6\d|7\d|8\d|9\d|1\d\d)\s*(kg|quilos|kilos|k)?\b/);
+if (weightMatch && (msg.includes('kg') || msg.includes('quilo') || msg.includes('kilo') || msg.includes('peso') || msg.includes('tenho'))) {
+aiMemory.weight = parseInt(weightMatch[1]);
+}
+​if (/(emagrecer|perder peso|secar|definir|definicao|queimar gordura|cutting|barriga)/.test(msg)) {
+aiMemory.goal = 'emagrecer';
+} else if (/(ganhar massa|hipertrofia|crescer|engordar|ganhar peso|bulking|volume|ficar grande)/.test(msg)) {
+aiMemory.goal = 'massa';
+} else if (/(energia|forca|disposicao|cansaco|foco|pump|carga)/.test(msg)) {
+aiMemory.goal = 'energia';
+}
+​if (/(\d)\s*(vezes|dias|x)/.test(msg) || /(todo dia|todos os dias|segunda a sexta|iniciante|sedentario|casa)/.test(msg)) {
+aiMemory.routine = rawText;
+}
+​// Referências rápidas aos produtos do catálogo
+const whey = PRODUCTS.find(p => p.name.toLowerCase().includes('whey')) || PRODUCTS[0];
+const creatina = PRODUCTS.find(p => p.name.toLowerCase().includes('creatina')) || PRODUCTS[1];
+const preTreino = PRODUCTS.find(p => p.name.toLowerCase().includes('pré') || p.category === 'energia') || PRODUCTS[2];
+const hiper = PRODUCTS.find(p => p.name.toLowerCase().includes('hipercal')) || PRODUCTS[3];
+const bcaa = PRODUCTS.find(p => p.name.toLowerCase().includes('bcaa')) || PRODUCTS[4];
+const vitD = PRODUCTS.find(p => p.name.toLowerCase().includes('vitamina') || p.name.toLowerCase().includes('zinco')) || PRODUCTS[5];
+​// 2. Perguntas de acompanhamento baseadas no tópico anterior ("como tomo isso?", "quanto custa?", "serve pra mulher?")
+if (/(como eu tomo|como tomar isso|como usa|qual a dose|que horas tomar)/.test(msg) && aiMemory.lastRecommendedProductId) {
+const lastProd = PRODUCTS.find(p => p.id === aiMemory.lastRecommendedProductId);
+if (lastProd) {
+aiMemory.lastTopic = 'how_to_use';
+appendMessage('bot', <p>Sobre o <strong>${lastProd.name}</strong> que acabamos de falar: 🥄</p> <p class="mt-1.5 text-neutral-300">${lastProd.howToUse}</p> <p class="mt-1.5 text-xs text-brandRedBright">Dica extra: mantenha o uso contínuo junto com uma boa hidratação para extrair 100% do resultado!</p>);
+return;
+}
+}
+​if (/(quanto custa|qual o preco|qual valor|preco disso)/.test(msg) && aiMemory.lastRecommendedProductId) {
+const lastProd = PRODUCTS.find(p => p.id === aiMemory.lastRecommendedProductId);
+if (lastProd) {
+appendMessage('bot', <p>O <strong>${lastProd.name}</strong> está saindo por <strong>${formatBRL(lastProd.price)}</strong> à vista (ou em até 3x sem juros), e você ainda ganha <strong>${globalSettings.couponDiscount}% OFF</strong> na primeira compra usando o cupom <span class="font-mono text-brandRedBright font-bold">${globalSettings.couponCode}</span>!</p> ${buildProductRecCard(lastProd.id, lastProd.shortDesc)});
+return;
+}
+}
+​if (/(mulher|feminino|menina|gravida|gestante|idade|adolescente)/.test(msg)) {
+aiMemory.lastTopic = 'demographics';
+appendMessage('bot', <p>Com certeza! 👩‍🦱💪 Suplementos como <strong>Whey Protein, Creatina e Vitamina D3 + Zinco</strong> não têm hormônios e funcionam exatamente igual para <strong>mulheres e homens</strong> — ajudam a tonificar, ganhar massa magra sem acumular gordura e acelerar a recuperação.</p> <p class="mt-1.5 text-xs text-neutral-400"><em>Observação médica:</em> Gestantes, lactantes ou menores de 18 anos devem sempre validar pré-treinos com cafeína junto ao médico.</p> ${whey ? buildProductRecCard(whey.id, 'Excelente para definição, saciedade e tônus muscular.') : ''});
+return;
+}
+​// 3. Misturar Creatina + Pré-treino / Whey
+if ((msg.includes('misturar') || msg.includes('junto') || msg.includes('combinar')) && (msg.includes('creatina') || msg.includes('whey') || msg.includes('pre'))) {
+aiMemory.lastTopic = 'stacking';
+appendMessage('bot', <p>Pode misturar sem medo! 🔥 Essa inclusive é uma das combinações mais eficientes da suplementação:</p> <ul class="mt-1.5 space-y-1 text-xs text-neutral-300"> <li>• <strong>Creatina + Whey:</strong> Excelente no pós-treino! A proteína e o carboidrato estimulam a insulina, ajudando a empurrar a creatina para dentro do músculo.</li> <li>• <strong>Creatina + Pré-treino:</strong> Também pode! A cafeína não anula a creatina.</li> </ul> ${creatina ? buildProductRecCard(creatina.id, 'Base de força para combinar com seu Whey ou Pré-treino.') : ''});
+return;
+}
+​// 4. Diferença entre Whey Concentrado, Isolado e Hidrolisado / Tomar com leite ou água
+if (msg.includes('whey') && (msg.includes('isolado') || msg.includes('diferenca') || msg.includes('leite') || msg.includes('agua') || msg.includes('melhor'))) {
+aiMemory.lastTopic = 'whey_details';
+const isMilkQuery = msg.includes('leite') || msg.includes('agua');
+appendMessage('bot', isMilkQuery ? <p>Tanto com <strong>água</strong> quanto com <strong>leite</strong> funciona muito bem! 🥛💧</p> <p class="mt-1.5">• <strong>Com água:</strong> Absorção um pouco mais rápida e zero calorias extras (ótimo para quem quer secar).</p> <p class="mt-1">• <strong>Com leite desnatado/integral:</strong> Fica super cremoso, adiciona mais proteína e calorias (perfeito para ganhar massa!).</p> ${whey ? buildProductRecCard(whey.id, '24g de proteína pura e solubilidade instantânea.') : ''} : <p>O <strong>Whey Protein Concentrado</strong> é o melhor custo-benefício para 95% das pessoas! 🏆 Ele mantém frações imunológicas importantes do leite e entrega <strong>24g de proteína por dose</strong>.</p> <p class="mt-1.5">O Isolado só é obrigatório para quem tem intolerância severa à lactose. Para hipertrofia e definição, o nosso Concentrado entrega o mesmo resultado muscular gastando menos!</p> ${whey ? buildProductRecCard(whey.id, 'Alta concentração proteica com pureza garantida.') : ''});
+return;
+}
+​// 5. Cálculos matemáticos reais (Peso -> Proteína, Água, Creatina)
+if (aiMemory.weight && (msg.includes('kg') || msg.includes('quilo') || msg.includes('quanto') || msg.includes('calcul') || aiMemory.goal)) {
+const w = aiMemory.weight;
+const protMin = Math.round(w * 1.6);
+const protMax = Math.round(w * 2.0);
+const waterL = ((w * 38) / 1000).toFixed(1);
+const creatG = Math.max(3, Math.min(6, Math.round(w * 0.06)));
+​let recProd = whey;
+let recProd2 = creatina;
+let goalAdvice = 'hipertrofia limpa e ganho de força';
+​if (aiMemory.goal === 'emagrecer') {
+recProd = whey;
+recProd2 = bcaa;
+goalAdvice = 'definição muscular preservando massa magra';
+} else if (aiMemory.goal === 'energia') {
+recProd = preTreino;
+recProd2 = creatina;
+goalAdvice = 'explosão de energia e aumento de cargas';
+} else if (w < 62 && aiMemory.goal === 'massa') {
+recProd = hiper;
+recProd2 = creatina;
+goalAdvice = 'superávit calórico e ganho de peso rápido';
+}
+​aiMemory.lastTopic = 'personalized_calc';
+appendMessage('bot', <p>Calculei suas metas diárias exatas para <strong>${w}kg</strong> com foco em <strong>${goalAdvice}</strong>: 📊💪</p> <div class="mt-2 bg-darkBg border border-neutral-800 rounded-xl p-3 space-y-1 text-xs"> <div>🥩 <strong>Proteína diária:</strong> ${protMin}g a ${protMax}g por dia</div> <div>💧 <strong>Água ideal:</strong> ${waterL} litros por dia</div> <div>⚡ <strong>Creatina:</strong> ${creatG}g todos os dias</div> </div> ${recProd ? buildProductRecCard(recProd.id, 'Suplemento base recomendado para o seu peso e meta.') : ''} ${recProd2 && recProd2.id !== recProd?.id ? buildProductRecCard(recProd2.id, 'Sinergia ideal para potencializar seus resultados.') : ''});
+return;
+}
+​// 6. Cálculo de Proteína / Dieta / Emagrecer / Ganhar Massa sem peso informado
+if (msg.includes('proteina') || msg.includes('dieta') || msg.includes('caloria') || msg.includes('emagrecer') || msg.includes('secar') || msg.includes('ganhar massa') || msg.includes('hipertrofia')) {
+aiMemory.lastTopic = 'nutrition';
+const isCut = /(emagrecer|secar|definir|gordura)/.test(msg);
+appendMessage('bot', isCut ? <p>Para <strong>secar e definir</strong> sem perder os músculos que você suou para construir, a regra de ouro é: <strong>déficit calórico moderado (-300 a -500 kcal) + proteína alta (2g/kg)</strong>! 🔥</p> <p class="mt-1.5">O Whey Protein ajuda muito porque tem pouquíssima caloria e segura a fome:</p> ${whey ? buildProductRecCard(whey.id, '24g de proteína pura para segurar a massa magra no cutting.') : ''} : <p>Para <strong>ganhar massa muscular rápido e com qualidade</strong>, você precisa de superávit calórico limpo, treino pesado com progressão de carga e <strong>1,6g a 2,0g de proteína por kg</strong>! 📈</p> <p class="mt-1.5">Se quiser, me diga seu <strong>peso atual (ex: 75kg)</strong> que eu calculo sua meta exata agora!</p> ${whey ? buildProductRecCard(whey.id, 'Construção muscular acelerada no pós-treino.') : ''});
+return;
+}
+​// 7. Água / Hidratação
+if (msg.includes('agua') || msg.includes('hidratar') || msg.includes('beber')) {
+aiMemory.lastTopic = 'water';
+appendMessage('bot', <p>A conta da hidratação para quem treina é <strong>35ml a 45ml por kg de peso corporal</strong>! 💧</p> <p class="mt-1.5">Exemplo: se você pesa 70kg, beba entre <strong>2,5L e 3,1L por dia</strong>. Músculo é composto por ~75% de água — desidratação cai sua força na hora!</p>);
+return;
+}
+​// 8. Creatina (Dúvidas gerais, rins, retenção, como tomar)
+if (msg.includes('creatina')) {
+aiMemory.lastTopic = 'creatina';
+appendMessage('bot', <p>A <strong>Creatina Monohidratada</strong> é o suplemento #1 em comprovação científica no mundo! 🔬⚡</p> <ul class="mt-1.5 space-y-1 text-xs text-neutral-300"> <li>• <strong>Faz mal aos rins?</strong> Não! Estudos clínicos mostram total segurança em pessoas saudáveis.</li> <li>• <strong>Como tomar:</strong> 3g a 5g <strong>todos os dias</strong> (inclusive sábado e domingo), em qualquer horário, junto de alguma refeição.</li> <li>• <strong>Efeito:</strong> Aumenta a força, explosão e deixa o músculo mais cheio (hidratação intracelular).</li> </ul> ${creatina ? buildProductRecCard(creatina.id, '100% pura, rende 100 doses de força bruta.') : ''});
+return;
+}
+​// 9. Pré-treino / Taquicardia / Cafeína / Energia
+if (msg.includes('pre-treino') || msg.includes('pre treino') || msg.includes('insano') || msg.includes('taquicardia') || msg.includes('cafeina') || msg.includes('cansaco') || msg.includes('energia')) {
+aiMemory.lastTopic = 'pretreino';
+appendMessage('bot', <p>Nosso <strong>Pré-treino Insano</strong> entrega foco mental, vasodilatação (pump) e resistência sem "rebote" ruim! 🔥</p> <p class="mt-1.5 text-xs text-neutral-300"><strong>Dica de segurança:</strong> Se você é sensível à cafeína ou está começando agora, comece com <strong>meio scoop (5g)</strong> 25 minutos antes do treino para testar sua tolerância, e evite tomar após as 18h para não atrapalhar o sono.</p> ${preTreino ? buildProductRecCard(preTreino.id, 'Energia limpa e vasodilatação para treinos intensos.') : ''});
+return;
+}
+​// 10. Treinos específicos (Peito, Costas, Perna, Glúteo, Divisão ABC, Cardio)
+if (msg.includes('treino') || msg.includes('peito') || msg.includes('costas') || msg.includes('perna') || msg.includes('gluteo') || msg.includes('braco') || msg.includes('cardio') || msg.includes('abc')) {
+aiMemory.lastTopic = 'workout';
+let specificTip = 'Foque em <strong>8 a 12 repetições</strong> próximas da falha concêntrica, controlando a fase excêntrica (descida do peso) por 2 segundos.';
+if (msg.includes('peito')) specificTip = 'Para <strong>peitoral completo</strong>: comece com Supino Inclinado (foco na porção superior), depois Supino Reto com barra ou halteres e finalize com Crucifixo na polia ou Peck Deck!';
+else if (msg.includes('perna') || msg.includes('gluteo')) specificTip = 'Para <strong>pernas e glúteos</strong>: priorize Agachamento Livre, Leg Press 45°, Elevação Pélvica, Cadeira Extensora e Mesa Flexora com amplitude máxima!';
+else if (msg.includes('cardio')) specificTip = 'Faça o <strong>cardio depois da musculação</strong> (20 a 35 min em ritmo moderado) para queimar gordura sem roubar sua energia dos pesos!';
+​appendMessage('bot', <p>Bora ajustar esse treino! 🏋️‍♂️ ${specificTip}</p> <p class="mt-1.5 text-xs text-neutral-400">Lembre-se: o músculo cresce no descanso e com nutrição adequada após a sessão.</p> ${preTreino ? buildProductRecCard(preTreino.id, 'Para manter o rendimento máximo do primeiro ao último exercício.') : ''});
+return;
+}
+​// 11. Busca dinâmica por qualquer produto do catálogo (inclusive criados no Admin)
+const dynamicProduct = PRODUCTS.find(p => {
+const cleanName = p.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+const words = cleanName.split(' ').filter(w => w.length > 3);
+return words.some(w => msg.includes(w));
+});
+​if (dynamicProduct) {
+aiMemory.lastTopic = 'product_' + dynamicProduct.id;
+appendMessage('bot', <p>Excelente escolha! O <strong>${dynamicProduct.name}</strong> custa <strong>${formatBRL(dynamicProduct.price)}</strong> e é perfeito para o que você busca: ${dynamicProduct.description}</p> <p class="mt-1.5 text-xs text-neutral-300"><strong>Como tomar:</strong> ${dynamicProduct.howToUse}</p> ${buildProductRecCard(dynamicProduct.id, dynamicProduct.shortDesc)});
+return;
+}
+​// 12. Saudações naturais
+if (/^(oi|ola|opa|e ai|eai|bom dia|boa tarde|boa noite|fala|salve|tudo bem)\b/.test(msg)) {
+appendMessage('bot', <p>Fala, campeão(ã)! 🔥 Tudo 100%! Estou pronto para te ajudar.</p> <p class="mt-1.5">Você pode me perguntar coisas como: <em>"Tenho 82kg e quero secar, o que tomo?"</em>, <em>"Quanto de proteína comer por dia?"</em>, <em>"Como montar treino de peito?"</em> ou qualquer dúvida sobre nossos suplementos!</p>);
+return;
+}
+​// 13. Resposta inteligente contextual para qualquer outra pergunta aberta (variada, nunca repetitiva)
+const openVariations = [
+<p>Boa pergunta! Na nutrição e no treinamento de alta performance, o resultado vem da soma de <strong>treino progressivo, sono de qualidade (7h a 8h) e aporte proteico diário</strong>. 💡</p><p class="mt-1.5">Se você me contar seu <strong>peso atual</strong> ou qual é o seu foco hoje (<em>ganhar massa, secar ou ter mais gás</em>), eu monto uma estratégia completa e te mostro os melhores suplementos da <strong>${globalSettings.storeName}</strong>!</p>,
+<p>Entendi! Como personal e nutricionista virtual, sempre recomendo alinhar sua alimentação com suplementos que realmente têm ciência por trás — como <strong>Whey Protein</strong> para bater proteínas e <strong>Creatina</strong> para força. 🧬</p><p class="mt-1.5">Quer me passar seu peso (ex: <em>75kg</em>) para eu calcular sua necessidade diária de água e proteínas agora?</p>,
+<p>Para evoluir no shape sem perder tempo, o segredo é consistência nos treinos e praticidade na dieta! 🔥 Aqui na <strong>${globalSettings.storeName}</strong> temos desde proteínas e hipercalóricos até pré-treinos e vitaminas.</p><p class="mt-1.5">Qual parte da sua rotina você quer melhorar primeiro: <strong>força, ganho de peso, definição ou disposição</strong>?</p>
+];
+​const unused = openVariations.filter((_, idx) => !aiMemory.usedReplies.has(idx));
+const chosenIdx = unused.length > 0
+? openVariations.indexOf(unused[0])
+: Math.floor(Math.random() * openVariations.length);
+aiMemory.usedReplies.add(chosenIdx);
+​appendMessage('bot', openVariations[chosenIdx] + (whey ? buildProductRecCard(whey.id, 'Suplemento essencial para qualquer objetivo fitness.') : ''));
+}
+​// INICIALIZAÇÃO
+window.onload = function() {
+applyThemePreset(globalSettings.theme || 'crimson', true);
+syncStoreBranding();
+renderProducts();
+initChat();
+lucide.createIcons();
+};
+</script>
+</body>
+</html>
